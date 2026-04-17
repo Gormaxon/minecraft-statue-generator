@@ -1,0 +1,8 @@
+flask
+flask-cors
+requests
+pillow
+litemapy
+nbtlib
+gunicorn
+numpy

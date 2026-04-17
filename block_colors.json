@@ -1,0 +1,2222 @@
+{
+  "minecraft:acacia_log": {
+    "r": 103,
+    "g": 96,
+    "b": 86,
+    "file": "acacia_log.png",
+    "L": 41.09059321547418,
+    "a": 0.9042515846394983,
+    "b_lab": 6.713356556376715,
+    "variance": 0.17597914147471047
+  },
+  "minecraft:acacia_planks": {
+    "r": 168,
+    "g": 90,
+    "b": 50,
+    "file": "acacia_planks.png",
+    "L": 46.80010349690755,
+    "a": 28.57838369307131,
+    "b_lab": 36.62673950141541,
+    "variance": 0.17020967392939473
+  },
+  "minecraft:amethyst_block": {
+    "r": 133,
+    "g": 97,
+    "b": 191,
+    "file": "amethyst_block.png",
+    "L": 48.63274750829646,
+    "a": 34.56770902841494,
+    "b_lab": -44.28957312395709,
+    "variance": 0.4035005258685227
+  },
+  "minecraft:andesite": {
+    "r": 136,
+    "g": 136,
+    "b": 136,
+    "file": "andesite.png",
+    "L": 56.70341075675441,
+    "a": 0.0032970369763796192,
+    "b_lab": -0.006523366506683281,
+    "variance": 0.1952429027592735
+  },
+  "minecraft:bedrock": {
+    "r": 85,
+    "g": 85,
+    "b": 85,
+    "file": "bedrock.png",
+    "L": 36.14585083971984,
+    "a": 0.0023647693635220346,
+    "b_lab": -0.00467882446352208,
+    "variance": 0.3580039786162692
+  },
+  "minecraft:birch_log": {
+    "r": 216,
+    "g": 215,
+    "b": 210,
+    "file": "birch_log.png",
+    "L": 85.93286591700043,
+    "a": -0.5456809222798009,
+    "b_lab": 2.572545399828896,
+    "variance": 0.6747378635694483
+  },
+  "minecraft:birch_planks": {
+    "r": 192,
+    "g": 175,
+    "b": 121,
+    "file": "birch_planks.png",
+    "L": 71.72221918711823,
+    "a": -1.803815705255396,
+    "b_lab": 29.929152160848417,
+    "variance": 0.23265170340402697
+  },
+  "minecraft:blackstone": {
+    "r": 42,
+    "g": 35,
+    "b": 40,
+    "file": "blackstone.png",
+    "L": 14.6657240185999,
+    "a": 4.438018428668311,
+    "b_lab": -2.107576684255563,
+    "variance": 0.20774766967357147
+  },
+  "minecraft:black_concrete": {
+    "r": 8,
+    "g": 10,
+    "b": 15,
+    "file": "black_concrete.png",
+    "L": 2.738744960542924,
+    "a": 0.27553194451447605,
+    "b_lab": -2.3570249272611976,
+    "variance": 0.012342344399027143
+  },
+  "minecraft:black_glazed_terracotta": {
+    "r": 67,
+    "g": 30,
+    "b": 32,
+    "file": "black_glazed_terracotta.png",
+    "L": 16.63179946549384,
+    "a": 18.054816312092075,
+    "b_lab": 6.910034348942251,
+    "variance": 0.4168847456708049
+  },
+  "minecraft:black_terracotta": {
+    "r": 37,
+    "g": 22,
+    "b": 16,
+    "file": "black_terracotta.png",
+    "L": 9.02923885818274,
+    "a": 6.6810663155914,
+    "b_lab": 6.644531344249627,
+    "variance": 0.01172857812984018
+  },
+  "minecraft:black_wool": {
+    "r": 20,
+    "g": 21,
+    "b": 25,
+    "file": "black_wool.png",
+    "L": 6.822025945638771,
+    "a": 0.5854054580036322,
+    "b_lab": -2.907330293175753,
+    "variance": 0.09457960308719969
+  },
+  "minecraft:blue_concrete": {
+    "r": 44,
+    "g": 46,
+    "b": 143,
+    "file": "blue_concrete.png",
+    "L": 25.176150611774844,
+    "a": 31.836289246893607,
+    "b_lab": -53.84905327570304,
+    "variance": 0.0074835924990921295
+  },
+  "minecraft:blue_glazed_terracotta": {
+    "r": 47,
+    "g": 64,
+    "b": 139,
+    "file": "blue_glazed_terracotta.png",
+    "L": 29.751055795568924,
+    "a": 18.82580870381495,
+    "b_lab": -43.92296631134738,
+    "variance": 0.49614556426407713
+  },
+  "minecraft:blue_terracotta": {
+    "r": 74,
+    "g": 59,
+    "b": 91,
+    "file": "blue_terracotta.png",
+    "L": 27.67982023421738,
+    "a": 13.821587239210093,
+    "b_lab": -16.687203244061976,
+    "variance": 0.016680209498370107
+  },
+  "minecraft:blue_wool": {
+    "r": 53,
+    "g": 57,
+    "b": 157,
+    "file": "blue_wool.png",
+    "L": 29.70689350920233,
+    "a": 31.02871488009126,
+    "b_lab": -54.99809953026973,
+    "variance": 0.09573648553415438
+  },
+  "minecraft:brain_coral_block": {
+    "r": 207,
+    "g": 91,
+    "b": 159,
+    "file": "brain_coral_block.png",
+    "L": 55.329708521433815,
+    "a": 53.40524969104382,
+    "b_lab": -14.548611718431136,
+    "variance": 0.2747542010945124
+  },
+  "minecraft:bricks": {
+    "r": 150,
+    "g": 97,
+    "b": 83,
+    "file": "bricks.png",
+    "L": 46.5224961358747,
+    "a": 19.821462766562327,
+    "b_lab": 16.859531772100066,
+    "variance": 0.30633449774803756
+  },
+  "minecraft:brown_concrete": {
+    "r": 96,
+    "g": 59,
+    "b": 31,
+    "file": "brown_concrete.png",
+    "L": 28.678232809823385,
+    "a": 13.298307211072474,
+    "b_lab": 23.830046742746536,
+    "variance": 0.007439034116290991
+  },
+  "minecraft:brown_glazed_terracotta": {
+    "r": 119,
+    "g": 106,
+    "b": 85,
+    "file": "brown_glazed_terracotta.png",
+    "L": 45.4774998121357,
+    "a": 1.5694792511014022,
+    "b_lab": 13.677581081789302,
+    "variance": 0.5632824719654295
+  },
+  "minecraft:brown_terracotta": {
+    "r": 77,
+    "g": 51,
+    "b": 35,
+    "file": "brown_terracotta.png",
+    "L": 23.891004786077637,
+    "a": 9.575508192400717,
+    "b_lab": 14.842865553120244,
+    "variance": 0.016618706638406193
+  },
+  "minecraft:brown_wool": {
+    "r": 114,
+    "g": 71,
+    "b": 40,
+    "file": "brown_wool.png",
+    "L": 34.4718443010965,
+    "a": 15.104601247403732,
+    "b_lab": 25.99798687228977,
+    "variance": 0.09898359294512633
+  },
+  "minecraft:calcite": {
+    "r": 223,
+    "g": 224,
+    "b": 220,
+    "file": "calcite.png",
+    "L": 89.00115974455746,
+    "a": -1.0463090781472895,
+    "b_lab": 1.825812175838859,
+    "variance": 0.2396315388771421
+  },
+  "minecraft:carved_pumpkin": {
+    "r": 150,
+    "g": 84,
+    "b": 17,
+    "file": "carved_pumpkin.png",
+    "L": 42.5593516832703,
+    "a": 22.79598268225963,
+    "b_lab": 46.67162181290628,
+    "variance": 0.6457079195534888
+  },
+  "minecraft:cherry_log": {
+    "r": 54,
+    "g": 33,
+    "b": 44,
+    "file": "cherry_log.png",
+    "L": 15.767249456684851,
+    "a": 12.161304145174967,
+    "b_lab": -3.162886299799983,
+    "variance": 0.12571630520359664
+  },
+  "minecraft:cherry_planks": {
+    "r": 226,
+    "g": 178,
+    "b": 172,
+    "file": "cherry_planks.png",
+    "L": 76.67179889224107,
+    "a": 16.528184456250816,
+    "b_lab": 9.722633069705955,
+    "variance": 0.21655681076296845
+  },
+  "minecraft:chiseled_deepslate": {
+    "r": 54,
+    "g": 54,
+    "b": 54,
+    "file": "chiseled_deepslate.png",
+    "L": 22.615238145286455,
+    "a": 0.0017511677470050113,
+    "b_lab": -0.0034647803802134725,
+    "variance": 0.19977358624587116
+  },
+  "minecraft:chiseled_nether_bricks": {
+    "r": 45,
+    "g": 22,
+    "b": 27,
+    "file": "chiseled_nether_bricks.png",
+    "L": 10.637090834385013,
+    "a": 12.439544703415365,
+    "b_lab": 1.56649612563049,
+    "variance": 0.14163841418990888
+  },
+  "minecraft:chiseled_polished_blackstone": {
+    "r": 53,
+    "g": 48,
+    "b": 56,
+    "file": "chiseled_polished_blackstone.png",
+    "L": 20.65934133218041,
+    "a": 4.089101620326662,
+    "b_lab": -4.262345208435359,
+    "variance": 0.24974946204665305
+  },
+  "minecraft:chiseled_quartz_block": {
+    "r": 231,
+    "g": 226,
+    "b": 218,
+    "file": "chiseled_quartz_block.png",
+    "L": 90.06489963931516,
+    "a": 0.31209315301095053,
+    "b_lab": 4.493855704593419,
+    "variance": 0.10975229463577
+  },
+  "minecraft:chiseled_red_sandstone": {
+    "r": 183,
+    "g": 96,
+    "b": 27,
+    "file": "chiseled_red_sandstone.png",
+    "L": 50.1114939587323,
+    "a": 30.666839019523163,
+    "b_lab": 51.315774743119015,
+    "variance": 0.1901802951899485
+  },
+  "minecraft:chiseled_sandstone": {
+    "r": 216,
+    "g": 202,
+    "b": 155,
+    "file": "chiseled_sandstone.png",
+    "L": 81.40499623788457,
+    "a": -2.2960846971211146,
+    "b_lab": 25.274300924580118,
+    "variance": 0.2531606960812386
+  },
+  "minecraft:chiseled_stone_bricks": {
+    "r": 119,
+    "g": 118,
+    "b": 119,
+    "file": "chiseled_stone_bricks.png",
+    "L": 49.75069057300547,
+    "a": 0.5839805593017555,
+    "b_lab": -0.4205414346903025,
+    "variance": 0.28025220022999014
+  },
+  "minecraft:clay": {
+    "r": 160,
+    "g": 166,
+    "b": 179,
+    "file": "clay.png",
+    "L": 68.02112531723859,
+    "a": 0.5059483261291575,
+    "b_lab": -7.425918463486636,
+    "variance": 0.09608607920977778
+  },
+  "minecraft:coal_block": {
+    "r": 16,
+    "g": 15,
+    "b": 15,
+    "file": "coal_block.png",
+    "L": 4.3926761356962025,
+    "a": 0.3491566800865875,
+    "b_lab": 0.12162242193271,
+    "variance": 0.10611664404509914
+  },
+  "minecraft:coal_ore": {
+    "r": 105,
+    "g": 105,
+    "b": 105,
+    "file": "coal_ore.png",
+    "L": 44.41356014781601,
+    "a": 0.0027397028503628462,
+    "b_lab": -0.005420650705589836,
+    "variance": 0.37426128412365534
+  },
+  "minecraft:coarse_dirt": {
+    "r": 119,
+    "g": 85,
+    "b": 59,
+    "file": "coarse_dirt.png",
+    "L": 39.1300035220956,
+    "a": 10.709890315832999,
+    "b_lab": 20.692842853273085,
+    "variance": 0.32215010976764147
+  },
+  "minecraft:cobbled_deepslate": {
+    "r": 77,
+    "g": 77,
+    "b": 80,
+    "file": "cobbled_deepslate.png",
+    "L": 32.84227317007209,
+    "a": 0.6647239960161921,
+    "b_lab": -1.7752447805304161,
+    "variance": 0.25340901396310567
+  },
+  "minecraft:cobblestone": {
+    "r": 127,
+    "g": 127,
+    "b": 127,
+    "file": "cobblestone.png",
+    "L": 53.19277745493915,
+    "a": 0.003137832783772776,
+    "b_lab": -0.006208372375593463,
+    "variance": 0.364695523264165
+  },
+  "minecraft:copper_block": {
+    "r": 192,
+    "g": 107,
+    "b": 79,
+    "file": "copper_block.png",
+    "L": 54.32953947367044,
+    "a": 31.153120750915754,
+    "b_lab": 30.42010523256513,
+    "variance": 0.23649939758173996
+  },
+  "minecraft:copper_ore": {
+    "r": 124,
+    "g": 125,
+    "b": 120,
+    "file": "copper_ore.png",
+    "L": 52.18409891088716,
+    "a": -1.359083669843275,
+    "b_lab": 2.5843020267502848,
+    "variance": 0.3053532690819298
+  },
+  "minecraft:cracked_deepslate_bricks": {
+    "r": 64,
+    "g": 64,
+    "b": 65,
+    "file": "cracked_deepslate_bricks.png",
+    "L": 27.12557741555174,
+    "a": 0.22752028313138828,
+    "b_lab": -0.6133644934230631,
+    "variance": 0.2808357604131938
+  },
+  "minecraft:cracked_deepslate_tiles": {
+    "r": 52,
+    "g": 52,
+    "b": 52,
+    "file": "cracked_deepslate_tiles.png",
+    "L": 21.704275932542863,
+    "a": 0.0017098563963036106,
+    "b_lab": -0.003383043631877136,
+    "variance": 0.1837214797172884
+  },
+  "minecraft:cracked_nether_bricks": {
+    "r": 40,
+    "g": 20,
+    "b": 23,
+    "file": "cracked_nether_bricks.png",
+    "L": 9.101665681547459,
+    "a": 10.757581235072047,
+    "b_lab": 2.2653523751759606,
+    "variance": 0.12813885647638745
+  },
+  "minecraft:cracked_polished_blackstone_bricks": {
+    "r": 44,
+    "g": 37,
+    "b": 43,
+    "file": "cracked_polished_blackstone_bricks.png",
+    "L": 15.659617827520531,
+    "a": 4.642271521410946,
+    "b_lab": -2.749952222608898,
+    "variance": 0.23860544474584006
+  },
+  "minecraft:cracked_stone_bricks": {
+    "r": 118,
+    "g": 117,
+    "b": 118,
+    "file": "cracked_stone_bricks.png",
+    "L": 49.35283972000457,
+    "a": 0.5848456520499146,
+    "b_lab": -0.421130948709747,
+    "variance": 0.23491650422655116
+  },
+  "minecraft:crimson_nylium": {
+    "r": 130,
+    "g": 31,
+    "b": 31,
+    "file": "crimson_nylium.png",
+    "L": 28.965892257766434,
+    "a": 41.7766578530572,
+    "b_lab": 25.683527076447056,
+    "variance": 0.27024679046651934
+  },
+  "minecraft:crimson_planks": {
+    "r": 101,
+    "g": 48,
+    "b": 70,
+    "file": "crimson_planks.png",
+    "L": 27.63531494616405,
+    "a": 26.6543953401292,
+    "b_lab": -2.629944677078455,
+    "variance": 0.22452234962326517
+  },
+  "minecraft:crying_obsidian": {
+    "r": 32,
+    "g": 10,
+    "b": 60,
+    "file": "crying_obsidian.png",
+    "L": 7.681622349425972,
+    "a": 23.89030215770456,
+    "b_lab": -27.58794367067822,
+    "variance": 0.5281367584757993
+  },
+  "minecraft:cut_copper": {
+    "r": 191,
+    "g": 106,
+    "b": 80,
+    "file": "cut_copper.png",
+    "L": 53.98838481785259,
+    "a": 31.366195116280803,
+    "b_lab": 29.398221841422355,
+    "variance": 0.2617842103777138
+  },
+  "minecraft:cut_red_sandstone": {
+    "r": 189,
+    "g": 101,
+    "b": 31,
+    "file": "cut_red_sandstone.png",
+    "L": 52.090772805474984,
+    "a": 30.61044823428266,
+    "b_lab": 51.834691213180776,
+    "variance": 0.15565717389738631
+  },
+  "minecraft:cut_sandstone": {
+    "r": 217,
+    "g": 206,
+    "b": 159,
+    "file": "cut_sandstone.png",
+    "L": 82.59198787048183,
+    "a": -3.4553373058181513,
+    "b_lab": 24.802876187552968,
+    "variance": 0.20992317369670851
+  },
+  "minecraft:cyan_concrete": {
+    "r": 21,
+    "g": 119,
+    "b": 136,
+    "file": "cyan_concrete.png",
+    "L": 45.81263086808926,
+    "a": -20.2140865706488,
+    "b_lab": -16.890566355710224,
+    "variance": 0.008514179040010558
+  },
+  "minecraft:cyan_glazed_terracotta": {
+    "r": 52,
+    "g": 118,
+    "b": 125,
+    "file": "cyan_glazed_terracotta.png",
+    "L": 45.8628998102061,
+    "a": -18.662767712057242,
+    "b_lab": -10.196405288747702,
+    "variance": 0.6135246714887419
+  },
+  "minecraft:cyan_terracotta": {
+    "r": 86,
+    "g": 91,
+    "b": 91,
+    "file": "cyan_terracotta.png",
+    "L": 38.227223686435664,
+    "a": -1.9644990049383082,
+    "b_lab": -0.6870063079105648,
+    "variance": 0.02395779859016442
+  },
+  "minecraft:cyan_wool": {
+    "r": 21,
+    "g": 137,
+    "b": 145,
+    "file": "cyan_wool.png",
+    "L": 51.9445453325401,
+    "a": -26.526285523858828,
+    "b_lab": -12.86532294679279,
+    "variance": 0.08698962011032586
+  },
+  "minecraft:dark_oak_log": {
+    "r": 60,
+    "g": 46,
+    "b": 26,
+    "file": "dark_oak_log.png",
+    "L": 20.000713613476158,
+    "a": 3.3106196649141384,
+    "b_lab": 15.274482810702084,
+    "variance": 0.11107865235898019
+  },
+  "minecraft:dark_oak_planks": {
+    "r": 66,
+    "g": 43,
+    "b": 20,
+    "file": "dark_oak_planks.png",
+    "L": 19.787818010308,
+    "a": 7.811469635778695,
+    "b_lab": 19.024758931046275,
+    "variance": 0.12557897141099483
+  },
+  "minecraft:dark_prismarine": {
+    "r": 51,
+    "g": 91,
+    "b": 75,
+    "file": "dark_prismarine.png",
+    "L": 35.38829055727253,
+    "a": -18.336966697018397,
+    "b_lab": 4.838155945522848,
+    "variance": 0.21751125019188625
+  },
+  "minecraft:deepslate": {
+    "r": 80,
+    "g": 80,
+    "b": 82,
+    "file": "deepslate.png",
+    "L": 34.090928963363424,
+    "a": 0.4386534900771566,
+    "b_lab": -1.1782635956896992,
+    "variance": 0.25487876580414864
+  },
+  "minecraft:deepslate_bricks": {
+    "r": 70,
+    "g": 70,
+    "b": 71,
+    "file": "deepslate_bricks.png",
+    "L": 29.756354164474388,
+    "a": 0.22422363404470125,
+    "b_lab": -0.6046680878509014,
+    "variance": 0.2734608910952173
+  },
+  "minecraft:deepslate_coal_ore": {
+    "r": 74,
+    "g": 74,
+    "b": 76,
+    "file": "deepslate_coal_ore.png",
+    "L": 31.52111145405209,
+    "a": 0.4446371791793913,
+    "b_lab": -1.1935126390280049,
+    "variance": 0.36828227365996785
+  },
+  "minecraft:deepslate_copper_ore": {
+    "r": 92,
+    "g": 93,
+    "b": 89,
+    "file": "deepslate_copper_ore.png",
+    "L": 39.28462770116763,
+    "a": -1.2256661572831729,
+    "b_lab": 2.151238558556634,
+    "variance": 0.37967644460250843
+  },
+  "minecraft:deepslate_diamond_ore": {
+    "r": 83,
+    "g": 106,
+    "b": 106,
+    "file": "deepslate_diamond_ore.png",
+    "L": 43.04467565378241,
+    "a": -8.479999956039347,
+    "b_lab": -2.816825072615625,
+    "variance": 0.5371997862168403
+  },
+  "minecraft:deepslate_emerald_ore": {
+    "r": 78,
+    "g": 104,
+    "b": 87,
+    "file": "deepslate_emerald_ore.png",
+    "L": 41.54551770705157,
+    "a": -13.482935395623258,
+    "b_lab": 6.476184702900634,
+    "variance": 0.5327830670053437
+  },
+  "minecraft:deepslate_gold_ore": {
+    "r": 115,
+    "g": 102,
+    "b": 78,
+    "file": "deepslate_gold_ore.png",
+    "L": 43.79615016910803,
+    "a": 1.1663953809690208,
+    "b_lab": 15.474771515463303,
+    "variance": 0.5830858453777804
+  },
+  "minecraft:deepslate_iron_ore": {
+    "r": 106,
+    "g": 99,
+    "b": 94,
+    "file": "deepslate_iron_ore.png",
+    "L": 42.45425226594594,
+    "a": 1.8090669527846548,
+    "b_lab": 3.827975803435091,
+    "variance": 0.43706563088625916
+  },
+  "minecraft:deepslate_lapis_ore": {
+    "r": 79,
+    "g": 90,
+    "b": 115,
+    "file": "deepslate_lapis_ore.png",
+    "L": 38.2209639651853,
+    "a": 2.1357492210296867,
+    "b_lab": -15.596468203939363,
+    "variance": 0.4515067822607847
+  },
+  "minecraft:deepslate_tiles": {
+    "r": 54,
+    "g": 54,
+    "b": 55,
+    "file": "deepslate_tiles.png",
+    "L": 22.64833601270383,
+    "a": 0.2338014405162958,
+    "b_lab": -0.6298444359651767,
+    "variance": 0.18558548859201485
+  },
+  "minecraft:diamond_block": {
+    "r": 98,
+    "g": 237,
+    "b": 228,
+    "file": "diamond_block.png",
+    "L": 86.38828166613307,
+    "a": -39.52665209011641,
+    "b_lab": -6.950866314694326,
+    "variance": 0.4006028354013934
+  },
+  "minecraft:diamond_ore": {
+    "r": 121,
+    "g": 141,
+    "b": 140,
+    "file": "diamond_ore.png",
+    "L": 57.0833612617118,
+    "a": -7.352631830145229,
+    "b_lab": -1.8863042828102694,
+    "variance": 0.4119796500517774
+  },
+  "minecraft:diorite": {
+    "r": 188,
+    "g": 188,
+    "b": 188,
+    "file": "diorite.png",
+    "L": 76.24609054741438,
+    "a": 0.004183280650660315,
+    "b_lab": -0.008276847690980027,
+    "variance": 0.42998128031399835
+  },
+  "minecraft:dirt": {
+    "r": 134,
+    "g": 96,
+    "b": 67,
+    "file": "dirt.png",
+    "L": 44.00161364413189,
+    "a": 11.738830139636114,
+    "b_lab": 22.61451486582149,
+    "variance": 0.2884083409337305
+  },
+  "minecraft:dripstone_block": {
+    "r": 134,
+    "g": 107,
+    "b": 92,
+    "file": "dripstone_block.png",
+    "L": 47.43868270625295,
+    "a": 8.386201139648108,
+    "b_lab": 12.472409853099153,
+    "variance": 0.22329673512070072
+  },
+  "minecraft:emerald_block": {
+    "r": 42,
+    "g": 203,
+    "b": 87,
+    "file": "emerald_block.png",
+    "L": 72.15640656997209,
+    "a": -63.818655660299264,
+    "b_lab": 45.967367706969455,
+    "variance": 0.4448150869805694
+  },
+  "minecraft:emerald_ore": {
+    "r": 108,
+    "g": 136,
+    "b": 115,
+    "file": "emerald_ore.png",
+    "L": 54.06334536541175,
+    "a": -14.424604126688001,
+    "b_lab": 8.02709692643877,
+    "variance": 0.48474828132118974
+  },
+  "minecraft:end_stone": {
+    "r": 219,
+    "g": 222,
+    "b": 158,
+    "file": "end_stone.png",
+    "L": 86.88454549277589,
+    "a": -10.990273885311764,
+    "b_lab": 31.139525104353627,
+    "variance": 0.2076077917213826
+  },
+  "minecraft:end_stone_bricks": {
+    "r": 218,
+    "g": 224,
+    "b": 162,
+    "file": "end_stone_bricks.png",
+    "L": 87.40009562186519,
+    "a": -11.846980979915989,
+    "b_lab": 29.76508335744601,
+    "variance": 0.27334409411419747
+  },
+  "minecraft:exposed_copper": {
+    "r": 161,
+    "g": 125,
+    "b": 103,
+    "file": "exposed_copper.png",
+    "L": 55.30188130843163,
+    "a": 10.785638816479926,
+    "b_lab": 17.340901987004397,
+    "variance": 0.2229157642692005
+  },
+  "minecraft:exposed_cut_copper": {
+    "r": 154,
+    "g": 121,
+    "b": 101,
+    "file": "exposed_cut_copper.png",
+    "L": 53.475565654326374,
+    "a": 9.898229097241973,
+    "b_lab": 15.870572497253676,
+    "variance": 0.2531576678561099
+  },
+  "minecraft:farmland_moist": {
+    "r": 81,
+    "g": 44,
+    "b": 15,
+    "file": "farmland_moist.png",
+    "L": 22.249739242422862,
+    "a": 14.393161430621193,
+    "b_lab": 25.30141199860821,
+    "variance": 0.1884298150155705
+  },
+  "minecraft:gilded_blackstone": {
+    "r": 55,
+    "g": 42,
+    "b": 38,
+    "file": "gilded_blackstone.png",
+    "L": 18.400579175980766,
+    "a": 5.28175487379165,
+    "b_lab": 4.903955713216579,
+    "variance": 0.4031202199700477
+  },
+  "minecraft:glowstone": {
+    "r": 171,
+    "g": 131,
+    "b": 84,
+    "file": "glowstone.png",
+    "L": 57.58880891852536,
+    "a": 9.49488748131877,
+    "b_lab": 31.2064966423206,
+    "variance": 0.7770119648326951
+  },
+  "minecraft:gold_block": {
+    "r": 246,
+    "g": 208,
+    "b": 61,
+    "file": "gold_block.png",
+    "L": 84.50511799880671,
+    "a": -0.9733992432792715,
+    "b_lab": 72.98576157246465,
+    "variance": 0.3070073327513813
+  },
+  "minecraft:gold_ore": {
+    "r": 145,
+    "g": 133,
+    "b": 106,
+    "file": "gold_ore.png",
+    "L": 55.922622696638456,
+    "a": 0.051362022032375165,
+    "b_lab": 16.22211616995104,
+    "variance": 0.49832227808281326
+  },
+  "minecraft:granite": {
+    "r": 149,
+    "g": 103,
+    "b": 85,
+    "file": "granite.png",
+    "L": 47.93830426206548,
+    "a": 16.16313912331463,
+    "b_lab": 17.568943318388563,
+    "variance": 0.2668557847886827
+  },
+  "minecraft:gravel": {
+    "r": 131,
+    "g": 127,
+    "b": 126,
+    "file": "gravel.png",
+    "L": 53.503625756440385,
+    "a": 1.314736980695952,
+    "b_lab": 1.071034983123309,
+    "variance": 0.21145141614472623
+  },
+  "minecraft:gray_concrete": {
+    "r": 54,
+    "g": 57,
+    "b": 61,
+    "file": "gray_concrete.png",
+    "L": 23.82768182269318,
+    "a": -0.3013499334540981,
+    "b_lab": -2.9247743426202732,
+    "variance": 0.00659903896558069
+  },
+  "minecraft:gray_glazed_terracotta": {
+    "r": 83,
+    "g": 90,
+    "b": 93,
+    "file": "gray_glazed_terracotta.png",
+    "L": 37.73748840394724,
+    "a": -2.061061419546623,
+    "b_lab": -2.675868602532727,
+    "variance": 0.41004925853233326
+  },
+  "minecraft:gray_terracotta": {
+    "r": 57,
+    "g": 42,
+    "b": 35,
+    "file": "gray_terracotta.png",
+    "L": 18.571378010020396,
+    "a": 5.750338904653734,
+    "b_lab": 7.257033691633053,
+    "variance": 0.012627992247551343
+  },
+  "minecraft:gray_wool": {
+    "r": 62,
+    "g": 68,
+    "b": 71,
+    "file": "gray_wool.png",
+    "L": 28.4151353568704,
+    "a": -1.740825270091645,
+    "b_lab": -2.659545034570532,
+    "variance": 0.07384736230624735
+  },
+  "minecraft:green_concrete": {
+    "r": 73,
+    "g": 91,
+    "b": 36,
+    "file": "green_concrete.png",
+    "L": 36.03433145864916,
+    "a": -16.645027352481605,
+    "b_lab": 28.957626347651455,
+    "variance": 0.007556979380256261
+  },
+  "minecraft:green_glazed_terracotta": {
+    "r": 117,
+    "g": 142,
+    "b": 67,
+    "file": "green_glazed_terracotta.png",
+    "L": 55.61731847801987,
+    "a": -21.445289622645582,
+    "b_lab": 36.672067770105045,
+    "variance": 0.6320517842932839
+  },
+  "minecraft:green_terracotta": {
+    "r": 76,
+    "g": 83,
+    "b": 42,
+    "file": "green_terracotta.png",
+    "L": 33.75311662649502,
+    "a": -10.071116206299969,
+    "b_lab": 22.978918346865875,
+    "variance": 0.017387760242995768
+  },
+  "minecraft:green_wool": {
+    "r": 84,
+    "g": 109,
+    "b": 27,
+    "file": "green_wool.png",
+    "L": 42.614042258747766,
+    "a": -22.058783478207722,
+    "b_lab": 40.41323927848921,
+    "variance": 0.10187345993236487
+  },
+  "minecraft:honeycomb_block": {
+    "r": 229,
+    "g": 148,
+    "b": 29,
+    "file": "honeycomb_block.png",
+    "L": 67.9664314872822,
+    "a": 22.283497202493784,
+    "b_lab": 67.78441142595939,
+    "variance": 0.3580039786162692
+  },
+  "minecraft:horn_coral_block": {
+    "r": 216,
+    "g": 199,
+    "b": 66,
+    "file": "horn_coral_block.png",
+    "L": 79.52217245182038,
+    "a": -8.84566697557132,
+    "b_lab": 65.43090059982624,
+    "variance": 0.24051142162132416
+  },
+  "minecraft:iron_block": {
+    "r": 220,
+    "g": 220,
+    "b": 220,
+    "file": "iron_block.png",
+    "L": 87.76088811005116,
+    "a": 0.004705466789434176,
+    "b_lab": -0.009310021292741055,
+    "variance": 0.22266709483416103
+  },
+  "minecraft:iron_ore": {
+    "r": 136,
+    "g": 129,
+    "b": 122,
+    "file": "iron_ore.png",
+    "L": 54.38579659078967,
+    "a": 1.3421534046079708,
+    "b_lab": 4.728520757200694,
+    "variance": 0.2687334520834218
+  },
+  "minecraft:jungle_log": {
+    "r": 85,
+    "g": 67,
+    "b": 25,
+    "file": "jungle_log.png",
+    "L": 29.452270538031705,
+    "a": 2.382018390448354,
+    "b_lab": 27.71728146950121,
+    "variance": 0.15789115761498357
+  },
+  "minecraft:jungle_planks": {
+    "r": 160,
+    "g": 115,
+    "b": 80,
+    "file": "jungle_planks.png",
+    "L": 52.190650356152815,
+    "a": 13.422537573168746,
+    "b_lab": 26.303080949486112,
+    "variance": 0.29538676520025303
+  },
+  "minecraft:lapis_block": {
+    "r": 30,
+    "g": 67,
+    "b": 140,
+    "file": "lapis_block.png",
+    "L": 29.87146746359464,
+    "a": 14.582428445202995,
+    "b_lab": -44.38526359544692,
+    "variance": 0.12034060497238795
+  },
+  "minecraft:lapis_ore": {
+    "r": 107,
+    "g": 117,
+    "b": 141,
+    "file": "lapis_ore.png",
+    "L": 49.217740186654694,
+    "a": 1.880011777004087,
+    "b_lab": -14.315298999513427,
+    "variance": 0.43805174768781324
+  },
+  "minecraft:light_blue_concrete": {
+    "r": 35,
+    "g": 137,
+    "b": 198,
+    "file": "light_blue_concrete.png",
+    "L": 54.37105637684475,
+    "a": -6.7642311038122465,
+    "b_lab": -39.56681479853603,
+    "variance": 0.3580039786162692
+  },
+  "minecraft:light_blue_concrete_powder": {
+    "r": 74,
+    "g": 180,
+    "b": 213,
+    "file": "light_blue_concrete_powder.png",
+    "L": 68.68055040133206,
+    "a": -20.253949731567246,
+    "b_lab": -25.635651885814138,
+    "variance": 0.3580039786162692
+  },
+  "minecraft:light_blue_glazed_terracotta": {
+    "r": 94,
+    "g": 164,
+    "b": 208,
+    "file": "light_blue_glazed_terracotta.png",
+    "L": 64.55144309853095,
+    "a": -9.530201217083311,
+    "b_lab": -29.169607209875625,
+    "variance": 0.3580039786162692
+  },
+  "minecraft:light_blue_shulker_box": {
+    "r": 49,
+    "g": 163,
+    "b": 212,
+    "file": "light_blue_shulker_box.png",
+    "L": 63.01158456399848,
+    "a": -14.965666499278552,
+    "b_lab": -33.888102836771886,
+    "variance": 0.3580039786162692
+  },
+  "minecraft:light_blue_terracotta": {
+    "r": 113,
+    "g": 108,
+    "b": 137,
+    "file": "light_blue_terracotta.png",
+    "L": 47.029513689151514,
+    "a": 8.299794589132436,
+    "b_lab": -15.223055150893483,
+    "variance": 0.3580039786162692
+  },
+  "minecraft:light_blue_wool": {
+    "r": 58,
+    "g": 175,
+    "b": 217,
+    "file": "light_blue_wool.png",
+    "L": 66.95259252166309,
+    "a": -18.6443831191912,
+    "b_lab": -30.527666281135836,
+    "variance": 0.3580039786162692
+  },
+  "minecraft:light_gray_concrete": {
+    "r": 125,
+    "g": 125,
+    "b": 115,
+    "file": "light_gray_concrete.png",
+    "L": 52.13552334253386,
+    "a": -1.9221028261176554,
+    "b_lab": 5.447283371727218,
+    "variance": 0.3580039786162692
+  },
+  "minecraft:light_gray_concrete_powder": {
+    "r": 154,
+    "g": 154,
+    "b": 148,
+    "file": "light_gray_concrete_powder.png",
+    "L": 63.441399022290796,
+    "a": -1.1296676610225154,
+    "b_lab": 3.137959258984502,
+    "variance": 0.3580039786162692
+  },
+  "minecraft:light_gray_glazed_terracotta": {
+    "r": 144,
+    "g": 166,
+    "b": 167,
+    "file": "light_gray_glazed_terracotta.png",
+    "L": 66.51361972982673,
+    "a": -7.418213447179578,
+    "b_lab": -3.1079353689500877,
+    "variance": 0.3580039786162692
+  },
+  "minecraft:light_gray_shulker_box": {
+    "r": 124,
+    "g": 124,
+    "b": 115,
+    "file": "light_gray_shulker_box.png",
+    "L": 51.76726027955792,
+    "a": -1.7382634440486489,
+    "b_lab": 4.907632255071603,
+    "variance": 0.3580039786162692
+  },
+  "minecraft:light_gray_terracotta": {
+    "r": 135,
+    "g": 106,
+    "b": 97,
+    "file": "light_gray_terracotta.png",
+    "L": 47.39418175314406,
+    "a": 10.128099143343617,
+    "b_lab": 9.453945687495292,
+    "variance": 0.3580039786162692
+  },
+  "minecraft:light_gray_wool": {
+    "r": 142,
+    "g": 142,
+    "b": 134,
+    "file": "light_gray_wool.png",
+    "L": 58.80550088086106,
+    "a": -1.5179872995138566,
+    "b_lab": 4.2525509712059595,
+    "variance": 0.3580039786162692
+  },
+  "minecraft:lime_concrete": {
+    "r": 94,
+    "g": 168,
+    "b": 24,
+    "file": "lime_concrete.png",
+    "L": 62.04133251530213,
+    "a": -45.14566971056722,
+    "b_lab": 59.51099045969133,
+    "variance": 0.011832830076094042
+  },
+  "minecraft:lime_glazed_terracotta": {
+    "r": 162,
+    "g": 197,
+    "b": 55,
+    "file": "lime_glazed_terracotta.png",
+    "L": 74.75532067550596,
+    "a": -30.91622356432111,
+    "b_lab": 63.37154937979852,
+    "variance": 0.6043580305718951
+  },
+  "minecraft:lime_terracotta": {
+    "r": 103,
+    "g": 117,
+    "b": 52,
+    "file": "lime_terracotta.png",
+    "L": 46.7824580138208,
+    "a": -15.83967074133319,
+    "b_lab": 33.66452409166961,
+    "variance": 0.02759045428004298
+  },
+  "minecraft:lime_wool": {
+    "r": 112,
+    "g": 185,
+    "b": 25,
+    "file": "lime_wool.png",
+    "L": 68.17720206689962,
+    "a": -45.8993792645257,
+    "b_lab": 64.93767999280965,
+    "variance": 0.10870805073835421
+  },
+  "minecraft:magenta_concrete": {
+    "r": 169,
+    "g": 48,
+    "b": 159,
+    "file": "magenta_concrete.png",
+    "L": 42.841678956275665,
+    "a": 60.97806249983784,
+    "b_lab": -34.33129262338601,
+    "variance": 0.011759219014983502
+  },
+  "minecraft:magenta_glazed_terracotta": {
+    "r": 208,
+    "g": 100,
+    "b": 191,
+    "file": "magenta_glazed_terracotta.png",
+    "L": 58.307367307639154,
+    "a": 54.32146135593274,
+    "b_lab": -28.471771005621505,
+    "variance": 0.38083320374082485
+  },
+  "minecraft:magenta_terracotta": {
+    "r": 149,
+    "g": 88,
+    "b": 108,
+    "file": "magenta_terracotta.png",
+    "L": 44.873902856590846,
+    "a": 27.85266022793137,
+    "b_lab": -0.5782180038731655,
+    "variance": 0.02751289943478089
+  },
+  "minecraft:magenta_wool": {
+    "r": 189,
+    "g": 68,
+    "b": 179,
+    "file": "magenta_wool.png",
+    "L": 49.747103908327134,
+    "a": 61.48305867179027,
+    "b_lab": -35.084784773342,
+    "variance": 0.16041211499430696
+  },
+  "minecraft:magma": {
+    "r": 142,
+    "g": 63,
+    "b": 31,
+    "file": "magma.png",
+    "L": 36.75213403863638,
+    "a": 31.419994658127337,
+    "b_lab": 34.74384918839024,
+    "variance": 0.5858521835230398
+  },
+  "minecraft:mangrove_log": {
+    "r": 83,
+    "g": 66,
+    "b": 41,
+    "file": "mangrove_log.png",
+    "L": 29.147337366469742,
+    "a": 3.5490865131865004,
+    "b_lab": 17.948345263146514,
+    "variance": 0.11941437605600246
+  },
+  "minecraft:mangrove_planks": {
+    "r": 117,
+    "g": 54,
+    "b": 48,
+    "file": "mangrove_planks.png",
+    "L": 30.957898888453812,
+    "a": 27.074419292380135,
+    "b_lab": 16.815463410802966,
+    "variance": 0.15981368393735274
+  },
+  "minecraft:mossy_cobblestone": {
+    "r": 110,
+    "g": 118,
+    "b": 94,
+    "file": "mossy_cobblestone.png",
+    "L": 48.360697592978326,
+    "a": -7.641045335201491,
+    "b_lab": 12.233665739179377,
+    "variance": 0.3508975320401532
+  },
+  "minecraft:mossy_stone_bricks": {
+    "r": 115,
+    "g": 121,
+    "b": 105,
+    "file": "mossy_stone_bricks.png",
+    "L": 49.90532573047928,
+    "a": -5.391350419803209,
+    "b_lab": 8.008514275314482,
+    "variance": 0.28586630603240076
+  },
+  "minecraft:moss_block": {
+    "r": 89,
+    "g": 109,
+    "b": 45,
+    "file": "moss_block.png",
+    "L": 43.138416952552994,
+    "a": -18.376559621563928,
+    "b_lab": 32.76386425963297,
+    "variance": 0.16706545380487578
+  },
+  "minecraft:mud_bricks": {
+    "r": 137,
+    "g": 103,
+    "b": 79,
+    "file": "mud_bricks.png",
+    "L": 46.42307440777939,
+    "a": 10.29772597615497,
+    "b_lab": 18.82314489677521,
+    "variance": 0.20749570836581377
+  },
+  "minecraft:netherite_block": {
+    "r": 66,
+    "g": 61,
+    "b": 63,
+    "file": "netherite_block.png",
+    "L": 26.316496889378044,
+    "a": 2.579502326535088,
+    "b_lab": -0.45789825760323977,
+    "variance": 0.19280825623281406
+  },
+  "minecraft:netherrack": {
+    "r": 97,
+    "g": 38,
+    "b": 38,
+    "file": "netherrack.png",
+    "L": 23.893527035986423,
+    "a": 26.829169219060837,
+    "b_lab": 13.463069660045878,
+    "variance": 0.17361722137076596
+  },
+  "minecraft:nether_bricks": {
+    "r": 44,
+    "g": 21,
+    "b": 26,
+    "file": "nether_bricks.png",
+    "L": 10.15580675532528,
+    "a": 12.489523821065315,
+    "b_lab": 1.6021771648092709,
+    "variance": 0.12184495602314935
+  },
+  "minecraft:nether_gold_ore": {
+    "r": 115,
+    "g": 54,
+    "b": 42,
+    "file": "nether_gold_ore.png",
+    "L": 30.521334051995417,
+    "a": 25.73558955541805,
+    "b_lab": 19.99572755989878,
+    "variance": 0.5058176148301033
+  },
+  "minecraft:nether_portal": {
+    "r": 87,
+    "g": 10,
+    "b": 191,
+    "file": "nether_portal.png",
+    "L": 29.42484190696696,
+    "a": 64.71213179308118,
+    "b_lab": -75.71441852992103,
+    "variance": 0.24464992311715
+  },
+  "minecraft:nether_quartz_ore": {
+    "r": 117,
+    "g": 65,
+    "b": 62,
+    "file": "nether_quartz_ore.png",
+    "L": 33.79537490220293,
+    "a": 22.159720304825548,
+    "b_lab": 11.689406460849073,
+    "variance": 0.6039209328606652
+  },
+  "minecraft:note_block": {
+    "r": 88,
+    "g": 58,
+    "b": 40,
+    "file": "note_block.png",
+    "L": 27.446544346198763,
+    "a": 10.933992823539073,
+    "b_lab": 16.517222844746428,
+    "variance": 0.325897300653934
+  },
+  "minecraft:oak_log": {
+    "r": 109,
+    "g": 85,
+    "b": 50,
+    "file": "oak_log.png",
+    "L": 37.80381307282322,
+    "a": 5.155142373275745,
+    "b_lab": 24.08266688724927,
+    "variance": 0.25766058243190304
+  },
+  "minecraft:oak_planks": {
+    "r": 162,
+    "g": 130,
+    "b": 78,
+    "file": "oak_planks.png",
+    "L": 56.28420247709428,
+    "a": 5.58836221412462,
+    "b_lab": 32.62393033079326,
+    "variance": 0.2976224061171477
+  },
+  "minecraft:obsidian": {
+    "r": 15,
+    "g": 10,
+    "b": 24,
+    "file": "obsidian.png",
+    "L": 3.4739565524030276,
+    "a": 4.296003607742682,
+    "b_lab": -7.077918958143492,
+    "variance": 0.2344558970640002
+  },
+  "minecraft:orange_concrete": {
+    "r": 224,
+    "g": 97,
+    "b": 0,
+    "file": "orange_concrete.png",
+    "L": 56.48279140401942,
+    "a": 46.008220366207276,
+    "b_lab": 65.4940509662949,
+    "variance": 0.011699060633840377
+  },
+  "minecraft:orange_glazed_terracotta": {
+    "r": 154,
+    "g": 147,
+    "b": 91,
+    "file": "orange_glazed_terracotta.png",
+    "L": 60.33135896622622,
+    "a": -5.908967654455644,
+    "b_lab": 30.551593790404862,
+    "variance": 1.0
+  },
+  "minecraft:orange_terracotta": {
+    "r": 161,
+    "g": 83,
+    "b": 37,
+    "file": "orange_terracotta.png",
+    "L": 44.0850723748151,
+    "a": 28.808267351507098,
+    "b_lab": 40.140683962782084,
+    "variance": 0.02755243524925671
+  },
+  "minecraft:orange_wool": {
+    "r": 240,
+    "g": 118,
+    "b": 19,
+    "file": "orange_wool.png",
+    "L": 62.95180661249756,
+    "a": 42.1272199800497,
+    "b_lab": 67.18012767465888,
+    "variance": 0.14090116100332006
+  },
+  "minecraft:oxidized_copper": {
+    "r": 82,
+    "g": 162,
+    "b": 132,
+    "file": "oxidized_copper.png",
+    "L": 61.04587314385705,
+    "a": -31.925301329034927,
+    "b_lab": 8.122534861405395,
+    "variance": 0.24791971465906526
+  },
+  "minecraft:oxidized_cut_copper": {
+    "r": 79,
+    "g": 153,
+    "b": 126,
+    "file": "oxidized_cut_copper.png",
+    "L": 57.990594141228115,
+    "a": -29.778350145020838,
+    "b_lab": 7.1290949510498525,
+    "variance": 0.28491800982481835
+  },
+  "minecraft:packed_mud": {
+    "r": 142,
+    "g": 106,
+    "b": 79,
+    "file": "packed_mud.png",
+    "L": 47.781926309033395,
+    "a": 10.716605004874591,
+    "b_lab": 20.73172015179747,
+    "variance": 0.12207618784829735
+  },
+  "minecraft:pink_concrete": {
+    "r": 213,
+    "g": 101,
+    "b": 142,
+    "file": "pink_concrete.png",
+    "L": 57.469351395098315,
+    "a": 48.327812120014414,
+    "b_lab": -1.3335089168567515,
+    "variance": 0.010818604822490138
+  },
+  "minecraft:pink_glazed_terracotta": {
+    "r": 235,
+    "g": 154,
+    "b": 181,
+    "file": "pink_glazed_terracotta.png",
+    "L": 72.30166993821113,
+    "a": 33.90619007403678,
+    "b_lab": -1.4110758202827034,
+    "variance": 0.28700133653132714
+  },
+  "minecraft:pink_terracotta": {
+    "r": 161,
+    "g": 78,
+    "b": 78,
+    "file": "pink_terracotta.png",
+    "L": 43.6184812865158,
+    "a": 34.334903108847904,
+    "b_lab": 16.197073706574685,
+    "variance": 0.02869507056370383
+  },
+  "minecraft:pink_wool": {
+    "r": 237,
+    "g": 141,
+    "b": 172,
+    "file": "pink_wool.png",
+    "L": 69.49291127635935,
+    "a": 40.162907554361084,
+    "b_lab": -0.4860792935522218,
+    "variance": 0.20769086915319368
+  },
+  "minecraft:pointed_dripstone_down_frustum": {
+    "r": 128,
+    "g": 102,
+    "b": 89,
+    "file": "pointed_dripstone_down_frustum.png",
+    "L": 45.37728460869249,
+    "a": 8.3586183223604,
+    "b_lab": 11.295864631738862,
+    "variance": 0.673919416848233
+  },
+  "minecraft:pointed_dripstone_down_middle": {
+    "r": 130,
+    "g": 103,
+    "b": 90,
+    "file": "pointed_dripstone_down_middle.png",
+    "L": 45.88587825532488,
+    "a": 8.760778676781932,
+    "b_lab": 11.438742878026098,
+    "variance": 0.643509614551921
+  },
+  "minecraft:pointed_dripstone_up_frustum": {
+    "r": 128,
+    "g": 102,
+    "b": 89,
+    "file": "pointed_dripstone_up_frustum.png",
+    "L": 45.37728460869249,
+    "a": 8.3586183223604,
+    "b_lab": 11.295864631738862,
+    "variance": 0.673919416848233
+  },
+  "minecraft:pointed_dripstone_up_middle": {
+    "r": 130,
+    "g": 103,
+    "b": 90,
+    "file": "pointed_dripstone_up_middle.png",
+    "L": 45.88587825532488,
+    "a": 8.760778676781932,
+    "b_lab": 11.438742878026098,
+    "variance": 0.643509614551921
+  },
+  "minecraft:polished_andesite": {
+    "r": 132,
+    "g": 134,
+    "b": 133,
+    "file": "polished_andesite.png",
+    "L": 55.734824019487704,
+    "a": -0.9354013704019892,
+    "b_lab": 0.27097813224270517,
+    "variance": 0.25996745092613305
+  },
+  "minecraft:polished_blackstone": {
+    "r": 53,
+    "g": 48,
+    "b": 56,
+    "file": "polished_blackstone.png",
+    "L": 20.65934133218041,
+    "a": 4.089101620326662,
+    "b_lab": -4.262345208435359,
+    "variance": 0.19935271204557337
+  },
+  "minecraft:polished_blackstone_bricks": {
+    "r": 48,
+    "g": 42,
+    "b": 49,
+    "file": "polished_blackstone_bricks.png",
+    "L": 17.945981361914363,
+    "a": 4.359901675095646,
+    "b_lab": -3.527267927804145,
+    "variance": 0.22283639008003375
+  },
+  "minecraft:polished_deepslate": {
+    "r": 72,
+    "g": 72,
+    "b": 73,
+    "file": "polished_deepslate.png",
+    "L": 30.62483416390814,
+    "a": 0.2231907078319717,
+    "b_lab": -0.6019367474009218,
+    "variance": 0.25041931449991867
+  },
+  "minecraft:polished_diorite": {
+    "r": 192,
+    "g": 193,
+    "b": 194,
+    "file": "polished_diorite.png",
+    "L": 78.01733023208882,
+    "a": -0.15646664434715296,
+    "b_lab": -0.6319354622391415,
+    "variance": 0.42083808329093997
+  },
+  "minecraft:polished_granite": {
+    "r": 154,
+    "g": 106,
+    "b": 89,
+    "file": "polished_granite.png",
+    "L": 49.3738161135084,
+    "a": 17.01070143553507,
+    "b_lab": 17.260130787162055,
+    "variance": 0.27049714808195857
+  },
+  "minecraft:prismarine": {
+    "r": 99,
+    "g": 156,
+    "b": 151,
+    "file": "prismarine.png",
+    "L": 60.48389443439984,
+    "a": -19.819785819509327,
+    "b_lab": -3.3084038843238295,
+    "variance": 0.38627940701684577
+  },
+  "minecraft:prismarine_bricks": {
+    "r": 99,
+    "g": 171,
+    "b": 158,
+    "file": "prismarine_bricks.png",
+    "L": 65.15822715029093,
+    "a": -25.74489313645301,
+    "b_lab": -0.3802436128384823,
+    "variance": 0.29376332124108434
+  },
+  "minecraft:purple_concrete": {
+    "r": 100,
+    "g": 31,
+    "b": 156,
+    "file": "purple_concrete.png",
+    "L": 29.637397194441057,
+    "a": 52.339339936925356,
+    "b_lab": -54.29895023738034,
+    "variance": 0.008382090018830654
+  },
+  "minecraft:purple_glazed_terracotta": {
+    "r": 109,
+    "g": 47,
+    "b": 152,
+    "file": "purple_glazed_terracotta.png",
+    "L": 33.030244429637705,
+    "a": 46.21649952697929,
+    "b_lab": -46.295405603379116,
+    "variance": 0.515688621886164
+  },
+  "minecraft:purple_terracotta": {
+    "r": 118,
+    "g": 70,
+    "b": 86,
+    "file": "purple_terracotta.png",
+    "L": 35.79832647170303,
+    "a": 22.886404548053076,
+    "b_lab": -0.7015832347320727,
+    "variance": 0.028698191826511024
+  },
+  "minecraft:purple_wool": {
+    "r": 121,
+    "g": 42,
+    "b": 172,
+    "file": "purple_wool.png",
+    "L": 35.399038113877026,
+    "a": 55.44405381440459,
+    "b_lab": -54.44995583693526,
+    "variance": 0.14542093528693512
+  },
+  "minecraft:purpur_block": {
+    "r": 169,
+    "g": 125,
+    "b": 169,
+    "file": "purpur_block.png",
+    "L": 58.00554242594583,
+    "a": 24.655195925996242,
+    "b_lab": -16.735948467399453,
+    "variance": 0.21271897852139746
+  },
+  "minecraft:purpur_pillar": {
+    "r": 171,
+    "g": 129,
+    "b": 171,
+    "file": "purpur_pillar.png",
+    "L": 59.249807093878744,
+    "a": 23.466647203826298,
+    "b_lab": -15.975265534695282,
+    "variance": 0.23468973270384502
+  },
+  "minecraft:quartz_bricks": {
+    "r": 234,
+    "g": 229,
+    "b": 221,
+    "file": "quartz_bricks.png",
+    "L": 91.12173838456354,
+    "a": 0.310686457632936,
+    "b_lab": 4.4824331089776015,
+    "variance": 0.1003710500338251
+  },
+  "minecraft:quartz_pillar": {
+    "r": 235,
+    "g": 230,
+    "b": 224,
+    "file": "quartz_pillar.png",
+    "L": 91.52201724800618,
+    "a": 0.6504473205341532,
+    "b_lab": 3.5046777068030943,
+    "variance": 0.1029601875135126
+  },
+  "minecraft:raw_copper_block": {
+    "r": 154,
+    "g": 105,
+    "b": 79,
+    "file": "raw_copper_block.png",
+    "L": 48.930503760619644,
+    "a": 16.474157061677264,
+    "b_lab": 22.50505480420264,
+    "variance": 0.40980177254841005
+  },
+  "minecraft:raw_gold_block": {
+    "r": 221,
+    "g": 169,
+    "b": 46,
+    "file": "raw_gold_block.png",
+    "L": 72.19194932547803,
+    "a": 8.1111750385634,
+    "b_lab": 65.84133989415015,
+    "variance": 0.4599184848814215
+  },
+  "minecraft:raw_iron_block": {
+    "r": 166,
+    "g": 135,
+    "b": 107,
+    "file": "raw_iron_block.png",
+    "L": 58.505331140556336,
+    "a": 7.717479393061555,
+    "b_lab": 19.513025900466154,
+    "variance": 0.48486960813135194
+  },
+  "minecraft:red_concrete": {
+    "r": 142,
+    "g": 32,
+    "b": 32,
+    "file": "red_concrete.png",
+    "L": 31.55077728516833,
+    "a": 45.401695984989246,
+    "b_lab": 28.630329390550436,
+    "variance": 0.010594479406466347
+  },
+  "minecraft:red_glazed_terracotta": {
+    "r": 181,
+    "g": 59,
+    "b": 53,
+    "file": "red_glazed_terracotta.png",
+    "L": 43.07607765729523,
+    "a": 48.887911224730516,
+    "b_lab": 31.21797722912232,
+    "variance": 0.3110488610872016
+  },
+  "minecraft:red_nether_bricks": {
+    "r": 69,
+    "g": 7,
+    "b": 9,
+    "file": "red_nether_bricks.png",
+    "L": 12.201084864822413,
+    "a": 28.70153288040053,
+    "b_lab": 15.31734064345619,
+    "variance": 0.17540541346236788
+  },
+  "minecraft:red_sand": {
+    "r": 190,
+    "g": 102,
+    "b": 33,
+    "file": "red_sand.png",
+    "L": 52.46420381236237,
+    "a": 30.55344405707161,
+    "b_lab": 51.427747055438374,
+    "variance": 0.0967436067994214
+  },
+  "minecraft:red_sandstone": {
+    "r": 186,
+    "g": 99,
+    "b": 29,
+    "file": "red_sandstone.png",
+    "L": 51.21130011052425,
+    "a": 30.370209720453232,
+    "b_lab": 51.67353475624773,
+    "variance": 0.17851944509179
+  },
+  "minecraft:red_terracotta": {
+    "r": 143,
+    "g": 61,
+    "b": 46,
+    "file": "red_terracotta.png",
+    "L": 36.69534199748133,
+    "a": 33.67435337183319,
+    "b_lab": 26.171644154685747,
+    "variance": 0.026915814652499533
+  },
+  "minecraft:red_wool": {
+    "r": 160,
+    "g": 39,
+    "b": 34,
+    "file": "red_wool.png",
+    "L": 36.06141449711553,
+    "a": 48.83553703299523,
+    "b_lab": 33.369064977060916,
+    "variance": 0.09249660619422448
+  },
+  "minecraft:rooted_dirt": {
+    "r": 144,
+    "g": 103,
+    "b": 76,
+    "file": "rooted_dirt.png",
+    "L": 47.17274590988969,
+    "a": 12.996524702907797,
+    "b_lab": 21.718432419548673,
+    "variance": 0.3374510689774762
+  },
+  "minecraft:sand": {
+    "r": 219,
+    "g": 207,
+    "b": 163,
+    "file": "sand.png",
+    "L": 83.0886331319699,
+    "a": -2.673980339486348,
+    "b_lab": 23.40919802641277,
+    "variance": 0.1252075548920413
+  },
+  "minecraft:sandstone": {
+    "r": 216,
+    "g": 203,
+    "b": 155,
+    "file": "sandstone.png",
+    "L": 81.66250410875122,
+    "a": -2.8149740927034816,
+    "b_lab": 25.62392149912882,
+    "variance": 0.23678255878235177
+  },
+  "minecraft:sculk": {
+    "r": 12,
+    "g": 29,
+    "b": 36,
+    "file": "sculk.png",
+    "L": 9.674584058325703,
+    "a": -4.518208204210075,
+    "b_lab": -6.9676913990942,
+    "variance": 0.2442714410778642
+  },
+  "minecraft:sculk_vein": {
+    "r": 7,
+    "g": 48,
+    "b": 57,
+    "file": "sculk_vein.png",
+    "L": 17.711495786175114,
+    "a": -10.01334503481699,
+    "b_lab": -9.695479188217549,
+    "variance": 0.34972224063001217
+  },
+  "minecraft:shroomlight": {
+    "r": 240,
+    "g": 146,
+    "b": 70,
+    "file": "shroomlight.png",
+    "L": 69.13003105475653,
+    "a": 29.341973259780218,
+    "b_lab": 53.827281101011884,
+    "variance": 0.3580039786162692
+  },
+  "minecraft:smooth_basalt": {
+    "r": 72,
+    "g": 72,
+    "b": 78,
+    "file": "smooth_basalt.png",
+    "L": 30.789443896501474,
+    "a": 1.3652638567877573,
+    "b_lab": -3.5777906356819766,
+    "variance": 0.19943321320440568
+  },
+  "minecraft:smooth_stone": {
+    "r": 158,
+    "g": 158,
+    "b": 158,
+    "file": "smooth_stone.png",
+    "L": 65.1142450374671,
+    "a": 0.003678461057199378,
+    "b_lab": -0.007278034741187156,
+    "variance": 0.22348704964185903
+  },
+  "minecraft:soul_soil": {
+    "r": 75,
+    "g": 57,
+    "b": 46,
+    "file": "soul_soil.png",
+    "L": 25.621604953464,
+    "a": 6.152094799008023,
+    "b_lab": 9.910698070668856,
+    "variance": 0.16343732601709335
+  },
+  "minecraft:sponge": {
+    "r": 195,
+    "g": 192,
+    "b": 74,
+    "file": "sponge.png",
+    "L": 75.94374579971779,
+    "a": -13.69220093004514,
+    "b_lab": 57.951595437443906,
+    "variance": 0.21675736134692358
+  },
+  "minecraft:spruce_log": {
+    "r": 58,
+    "g": 37,
+    "b": 16,
+    "file": "spruce_log.png",
+    "L": 16.79691801562577,
+    "a": 7.331876896262663,
+    "b_lab": 17.593459021864643,
+    "variance": 0.1159044967503784
+  },
+  "minecraft:spruce_planks": {
+    "r": 114,
+    "g": 84,
+    "b": 48,
+    "file": "spruce_planks.png",
+    "L": 38.07733328739704,
+    "a": 7.907107710281136,
+    "b_lab": 25.70946817783124,
+    "variance": 0.1721214594534239
+  },
+  "minecraft:stone": {
+    "r": 125,
+    "g": 125,
+    "b": 125,
+    "file": "stone.png",
+    "L": 52.4066306936725,
+    "a": 0.003102181706127194,
+    "b_lab": -0.006137834784580853,
+    "variance": 0.13390072124937533
+  },
+  "minecraft:stone_bricks": {
+    "r": 122,
+    "g": 121,
+    "b": 122,
+    "file": "stone_bricks.png",
+    "L": 50.94065934308239,
+    "a": 0.5814324810033411,
+    "b_lab": -0.41880583798592497,
+    "variance": 0.2346904093429424
+  },
+  "minecraft:stripped_acacia_log": {
+    "r": 174,
+    "g": 92,
+    "b": 59,
+    "file": "stripped_acacia_log.png",
+    "L": 48.220611247981836,
+    "a": 30.517214483466336,
+    "b_lab": 33.57656101505062,
+    "variance": 0.08723611498591848
+  },
+  "minecraft:stripped_birch_log": {
+    "r": 196,
+    "g": 176,
+    "b": 118,
+    "file": "stripped_birch_log.png",
+    "L": 72.29157299043223,
+    "a": -1.0627789818730693,
+    "b_lab": 32.3265525332989,
+    "variance": 0.12899765968626123
+  },
+  "minecraft:stripped_cherry_log": {
+    "r": 215,
+    "g": 145,
+    "b": 148,
+    "file": "stripped_cherry_log.png",
+    "L": 67.15380013386522,
+    "a": 26.88263791618506,
+    "b_lab": 9.250586415080253,
+    "variance": 0.09595210572829899
+  },
+  "minecraft:stripped_dark_oak_log": {
+    "r": 72,
+    "g": 56,
+    "b": 36,
+    "file": "stripped_dark_oak_log.png",
+    "L": 24.74449024405812,
+    "a": 3.9783158497505857,
+    "b_lab": 15.17713405612554,
+    "variance": 0.06025783403880146
+  },
+  "minecraft:stripped_jungle_log": {
+    "r": 171,
+    "g": 132,
+    "b": 84,
+    "file": "stripped_jungle_log.png",
+    "L": 57.847245744687385,
+    "a": 8.934372305309413,
+    "b_lab": 31.53185014683212,
+    "variance": 0.13270567507960532
+  },
+  "minecraft:stripped_mangrove_log": {
+    "r": 119,
+    "g": 54,
+    "b": 47,
+    "file": "stripped_mangrove_log.png",
+    "L": 31.267009266807598,
+    "a": 27.81457806450452,
+    "b_lab": 17.917518268763178,
+    "variance": 0.052126638827518584
+  },
+  "minecraft:stripped_oak_log": {
+    "r": 177,
+    "g": 144,
+    "b": 86,
+    "file": "stripped_oak_log.png",
+    "L": 61.62445624992965,
+    "a": 5.026924006638511,
+    "b_lab": 35.307098519193644,
+    "variance": 0.14915363353351516
+  },
+  "minecraft:stripped_spruce_log": {
+    "r": 115,
+    "g": 89,
+    "b": 52,
+    "file": "stripped_spruce_log.png",
+    "L": 39.64360580465298,
+    "a": 5.741625551580032,
+    "b_lab": 25.355737307086578,
+    "variance": 0.09373297356856007
+  },
+  "minecraft:terracotta": {
+    "r": 152,
+    "g": 94,
+    "b": 67,
+    "file": "terracotta.png",
+    "L": 45.75183743763109,
+    "a": 20.77240694116095,
+    "b_lab": 25.31170881981716,
+    "variance": 0.02307656005641615
+  },
+  "minecraft:test_instance_block": {
+    "r": 127,
+    "g": 120,
+    "b": 119,
+    "file": "test_instance_block.png",
+    "L": 51.009577748960965,
+    "a": 2.4827393902089323,
+    "b_lab": 1.4990756120493165,
+    "variance": 0.7775585742659861
+  },
+  "minecraft:tube_coral": {
+    "r": 47,
+    "g": 83,
+    "b": 197,
+    "file": "tube_coral.png",
+    "L": 39.27915708738603,
+    "a": 27.928858461560317,
+    "b_lab": -63.15343777885166,
+    "variance": 0.8140812613516359
+  },
+  "minecraft:tube_coral_block": {
+    "r": 49,
+    "g": 87,
+    "b": 206,
+    "file": "tube_coral_block.png",
+    "L": 41.0976110309853,
+    "a": 28.900918095448397,
+    "b_lab": -65.39745192030105,
+    "variance": 0.277397839032544
+  },
+  "minecraft:tuff": {
+    "r": 108,
+    "g": 109,
+    "b": 102,
+    "file": "tuff.png",
+    "L": 45.7500333563307,
+    "a": -1.7837556467167892,
+    "b_lab": 3.768856043705515,
+    "variance": 0.25891964204382506
+  },
+  "minecraft:warped_nylium": {
+    "r": 43,
+    "g": 114,
+    "b": 101,
+    "file": "warped_nylium.png",
+    "L": 43.489237997939995,
+    "a": -25.502577886858475,
+    "b_lab": 0.6184559428229042,
+    "variance": 0.2930882074730781
+  },
+  "minecraft:warped_planks": {
+    "r": 43,
+    "g": 104,
+    "b": 99,
+    "file": "warped_planks.png",
+    "L": 40.10614648832963,
+    "a": -20.914830363778584,
+    "b_lab": -3.1326294422314493,
+    "variance": 0.30874406367379026
+  },
+  "minecraft:warped_wart_block": {
+    "r": 22,
+    "g": 119,
+    "b": 121,
+    "file": "warped_wart_block.png",
+    "L": 45.282524054893635,
+    "a": -25.161849680713,
+    "b_lab": -8.760636217840535,
+    "variance": 0.16629023874265111
+  },
+  "minecraft:weathered_copper": {
+    "r": 108,
+    "g": 153,
+    "b": 110,
+    "file": "weathered_copper.png",
+    "L": 59.06344972394642,
+    "a": -24.233344925222113,
+    "b_lab": 17.839690311509713,
+    "variance": 0.23748198504402826
+  },
+  "minecraft:weathered_cut_copper": {
+    "r": 109,
+    "g": 145,
+    "b": 107,
+    "file": "weathered_cut_copper.png",
+    "L": 56.64766654895497,
+    "a": -20.342925106668297,
+    "b_lab": 16.214638472188824,
+    "variance": 0.266792909989244
+  },
+  "minecraft:wet_sponge": {
+    "r": 171,
+    "g": 181,
+    "b": 70,
+    "file": "wet_sponge.png",
+    "L": 70.97274980688162,
+    "a": -18.47728199073306,
+    "b_lab": 53.75734840764168,
+    "variance": 0.23055643813525378
+  },
+  "minecraft:white_concrete": {
+    "r": 207,
+    "g": 213,
+    "b": 214,
+    "file": "white_concrete.png",
+    "L": 84.84773221788852,
+    "a": -1.8415397927920019,
+    "b_lab": -1.211148382218119,
+    "variance": 0.01013541805994657
+  },
+  "minecraft:white_glazed_terracotta": {
+    "r": 188,
+    "g": 212,
+    "b": 202,
+    "file": "white_glazed_terracotta.png",
+    "L": 82.93606994744161,
+    "a": -9.935642583079662,
+    "b_lab": 2.214618517153699,
+    "variance": 0.8659197121176592
+  },
+  "minecraft:white_terracotta": {
+    "r": 209,
+    "g": 178,
+    "b": 161,
+    "file": "white_terracotta.png",
+    "L": 74.80556683174196,
+    "a": 8.55243647184617,
+    "b_lab": 12.830129963838166,
+    "variance": 0.024420642148166707
+  },
+  "minecraft:white_wool": {
+    "r": 233,
+    "g": 236,
+    "b": 236,
+    "file": "white_wool.png",
+    "L": 93.17648063321155,
+    "a": -0.9944034061754037,
+    "b_lab": -0.360460140233565,
+    "variance": 0.1566409517789459
+  },
+  "minecraft:yellow_concrete": {
+    "r": 240,
+    "g": 175,
+    "b": 21,
+    "file": "yellow_concrete.png",
+    "L": 75.59999142753374,
+    "a": 12.533663521548943,
+    "b_lab": 75.93033854482641,
+    "variance": 0.011959676373413587
+  },
+  "minecraft:yellow_glazed_terracotta": {
+    "r": 234,
+    "g": 192,
+    "b": 88,
+    "file": "yellow_glazed_terracotta.png",
+    "L": 79.55475208131092,
+    "a": 3.6247066406304707,
+    "b_lab": 56.74597493530615,
+    "variance": 0.5991311837203606
+  },
+  "minecraft:yellow_terracotta": {
+    "r": 186,
+    "g": 133,
+    "b": 35,
+    "file": "yellow_terracotta.png",
+    "L": 59.28360089939595,
+    "a": 11.87879207919268,
+    "b_lab": 56.58674522856775,
+    "variance": 0.02703817007729612
+  },
+  "minecraft:yellow_wool": {
+    "r": 248,
+    "g": 197,
+    "b": 39,
+    "file": "yellow_wool.png",
+    "L": 81.8574522647557,
+    "a": 4.828072935096794,
+    "b_lab": 77.31012884105742,
+    "variance": 0.12482488757648462
+  }
+}
