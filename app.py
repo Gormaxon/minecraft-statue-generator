@@ -154,47 +154,135 @@ def create_statue_schematic(skin_img, username):
         idx = (y * length + z) * width + x
         blocks_array[idx] = get_or_add_palette(block_name)
 
+    def get_face_pixel(skin_img, part, sx, sy, sz, part_width, part_height, part_depth):
+        """Get pixel from correct face based on block position within body part."""
+        # Determine which face this block is on (prioritize front/back, then sides)
+        # UV layouts for each body part (u_start, v_start for each face)
+        uv_map = {
+            'head': {
+                'front': (8, 8),      # 8x8 face
+                'back': (24, 8),
+                'right': (0, 8),
+                'left': (16, 8),
+                'top': (8, 0),
+                'bottom': (16, 0)
+            },
+            'body': {
+                'front': (20, 20),    # 8x12 front/back, 4x12 sides
+                'back': (32, 20),
+                'right': (16, 20),
+                'left': (28, 20),
+                'top': (20, 16),
+                'bottom': (28, 16)
+            },
+            'right_arm': {
+                'front': (44, 20),    # 4x12 front/back, 4x12 sides
+                'back': (52, 20),
+                'right': (40, 20),    # outer
+                'left': (48, 20),     # inner
+                'top': (44, 16),
+                'bottom': (48, 16)
+            },
+            'left_arm': {
+                'front': (36, 52),
+                'back': (44, 52),
+                'right': (32, 52),    # inner
+                'left': (40, 52),     # outer
+                'top': (36, 48),
+                'bottom': (40, 48)
+            },
+            'right_leg': {
+                'front': (4, 20),     # 4x12 front/back, 4x12 sides
+                'back': (12, 20),
+                'right': (0, 20),     # outer
+                'left': (8, 20),      # inner
+                'top': (4, 16),
+                'bottom': (8, 16)
+            },
+            'left_leg': {
+                'front': (20, 52),
+                'back': (28, 52),
+                'right': (16, 52),    # inner
+                'left': (24, 52),     # outer
+                'top': (20, 48),
+                'bottom': (24, 48)
+            }
+        }
+
+        uv = uv_map[part]
+
+        # Determine which face based on position
+        # Front face: z at max
+        if sz == part_depth - 1:
+            u, v = uv['front']
+            return get_skin_pixel(skin_img, u + sx, v + (part_height - 1 - sy))
+        # Back face: z at min
+        elif sz == 0:
+            u, v = uv['back']
+            # Back face is mirrored horizontally
+            return get_skin_pixel(skin_img, u + (part_width - 1 - sx), v + (part_height - 1 - sy))
+        # Right face: x at min
+        elif sx == 0:
+            u, v = uv['right']
+            return get_skin_pixel(skin_img, u + (part_depth - 1 - sz), v + (part_height - 1 - sy))
+        # Left face: x at max
+        elif sx == part_width - 1:
+            u, v = uv['left']
+            return get_skin_pixel(skin_img, u + sz, v + (part_height - 1 - sy))
+        # Top face: y at max
+        elif sy == part_height - 1:
+            u, v = uv['top']
+            return get_skin_pixel(skin_img, u + sx, v + sz)
+        # Bottom face: y at min
+        elif sy == 0:
+            u, v = uv['bottom']
+            return get_skin_pixel(skin_img, u + sx, v + (part_depth - 1 - sz))
+        # Interior block - use front face as default
+        else:
+            u, v = uv['front']
+            return get_skin_pixel(skin_img, u + sx, v + (part_height - 1 - sy))
+
     # Fill all body parts
-    # Head: x=4-11, y=25-32, z=0-7
+    # Head: x=4-11, y=25-32, z=0-7 (8x8x8)
     for sy in range(8):
         for sx in range(8):
             for sz in range(8):
-                r, g, b, a = get_skin_pixel(skin_img, 8 + sx, 8 + (7 - sy))
+                r, g, b, a = get_face_pixel(skin_img, 'head', sx, sy, sz, 8, 8, 8)
                 set_block(4+sx, 25+sy, sz, find_closest_block(r, g, b))
 
-    # Body: x=4-11, y=13-24, z=2-5
+    # Body: x=4-11, y=13-24, z=2-5 (8x12x4)
     for sy in range(12):
         for sx in range(8):
             for sz in range(4):
-                r, g, b, a = get_skin_pixel(skin_img, 20 + sx, 20 + (11 - sy))
+                r, g, b, a = get_face_pixel(skin_img, 'body', sx, sy, sz, 8, 12, 4)
                 set_block(4+sx, 13+sy, 2+sz, find_closest_block(r, g, b))
 
-    # Right Arm: x=0-3, y=13-24, z=2-5
+    # Right Arm: x=0-3, y=13-24, z=2-5 (4x12x4)
     for sy in range(12):
         for sx in range(4):
             for sz in range(4):
-                r, g, b, a = get_skin_pixel(skin_img, 44 + sx, 20 + (11 - sy))
+                r, g, b, a = get_face_pixel(skin_img, 'right_arm', sx, sy, sz, 4, 12, 4)
                 set_block(sx, 13+sy, 2+sz, find_closest_block(r, g, b))
 
-    # Left Arm: x=12-15, y=13-24, z=2-5
+    # Left Arm: x=12-15, y=13-24, z=2-5 (4x12x4)
     for sy in range(12):
         for sx in range(4):
             for sz in range(4):
-                r, g, b, a = get_skin_pixel(skin_img, 36 + sx, 52 + (11 - sy))
+                r, g, b, a = get_face_pixel(skin_img, 'left_arm', sx, sy, sz, 4, 12, 4)
                 set_block(12+sx, 13+sy, 2+sz, find_closest_block(r, g, b))
 
-    # Right Leg: x=4-7, y=1-12, z=2-5
+    # Right Leg: x=4-7, y=1-12, z=2-5 (4x12x4)
     for sy in range(12):
         for sx in range(4):
             for sz in range(4):
-                r, g, b, a = get_skin_pixel(skin_img, 4 + sx, 20 + (11 - sy))
+                r, g, b, a = get_face_pixel(skin_img, 'right_leg', sx, sy, sz, 4, 12, 4)
                 set_block(4+sx, 1+sy, 2+sz, find_closest_block(r, g, b))
 
-    # Left Leg: x=8-11, y=1-12, z=2-5
+    # Left Leg: x=8-11, y=1-12, z=2-5 (4x12x4)
     for sy in range(12):
         for sx in range(4):
             for sz in range(4):
-                r, g, b, a = get_skin_pixel(skin_img, 20 + sx, 52 + (11 - sy))
+                r, g, b, a = get_face_pixel(skin_img, 'left_leg', sx, sy, sz, 4, 12, 4)
                 set_block(8+sx, 1+sy, 2+sz, find_closest_block(r, g, b))
 
     # Build NBT structure
