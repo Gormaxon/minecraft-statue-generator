@@ -174,8 +174,40 @@ def download_skin(url):
     return None
 
 
+def get_overlay_offset(u, v):
+    """Get the overlay layer offset for a given base UV coordinate.
+
+    Returns (u_offset, v_offset) to add to base coords to get overlay coords.
+    Returns None if no overlay exists for this region.
+    """
+    # Head region (v: 0-15)
+    if 0 <= v < 16:
+        if 0 <= u < 32:  # Head base region
+            return (32, 0)  # Head overlay is at u+32
+
+    # Body and arm base region (v: 16-31)
+    elif 16 <= v < 32:
+        if 16 <= u < 40:  # Body base
+            return (0, 16)  # Body overlay is at v+16
+        elif 40 <= u < 56:  # Right arm base
+            return (0, 16)  # Right arm overlay is at v+16
+
+    # Body and arm overlay region (v: 32-47) - no overlay for overlay
+    elif 32 <= v < 48:
+        return None
+
+    # Left arm and left leg region (v: 48-63)
+    elif 48 <= v < 64:
+        if 16 <= u < 32:  # Left leg base
+            return (-16, 0)  # Left leg overlay is at u-16 (0-15, 48-63)
+        elif 32 <= u < 48:  # Left arm base
+            return (16, 0)  # Left arm overlay is at u+16 (48-63, 48-63)
+
+    return None
+
+
 def get_skin_pixel(skin_img, u, v):
-    """Get pixel color from skin, handling old format skins."""
+    """Get pixel color from skin, handling old format skins and overlay layers."""
     w, h = skin_img.size
 
     # Handle 64x32 (old format) skins - mirror left limbs from right limbs
@@ -199,7 +231,29 @@ def get_skin_pixel(skin_img, u, v):
 
     u = max(0, min(u, w-1))
     v = max(0, min(v, h-1))
-    return skin_img.getpixel((u, v))
+
+    # Get base layer pixel
+    base_pixel = skin_img.getpixel((u, v))
+
+    # For 64x64 skins, check overlay layer
+    if h == 64:
+        overlay_offset = get_overlay_offset(u, v)
+        if overlay_offset:
+            ou = u + overlay_offset[0]
+            ov = v + overlay_offset[1]
+            if 0 <= ou < w and 0 <= ov < h:
+                overlay_pixel = skin_img.getpixel((ou, ov))
+                # If overlay is not transparent, use it
+                if overlay_pixel[3] > 0:
+                    return overlay_pixel
+                # If base is transparent but overlay isn't, we already returned
+                # If both are transparent or overlay is transparent, use base
+
+    # If base pixel is transparent, return a fallback color
+    if base_pixel[3] == 0:
+        return (0, 0, 0, 255)  # Default to black if fully transparent
+
+    return base_pixel
 
 
 def create_statue_schematic(skin_img, username, hollow=False, scale=1):
