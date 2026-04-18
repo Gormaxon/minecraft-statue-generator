@@ -212,8 +212,18 @@ def create_statue_schematic(skin_img, username):
         uv = uv_map[part]
 
         # Determine which face based on position
+        # All faces render fully - top/bottom first so head/arm tops are complete
+
+        # Top face: y at max (full top surface)
+        if sy == part_height - 1:
+            u, v = uv['top']
+            return get_skin_pixel(skin_img, u + sx, v + sz)
+        # Bottom face: y at min (full bottom surface)
+        elif sy == 0:
+            u, v = uv['bottom']
+            return get_skin_pixel(skin_img, u + sx, v + (part_depth - 1 - sz))
         # Front face: z at max
-        if sz == part_depth - 1:
+        elif sz == part_depth - 1:
             u, v = uv['front']
             return get_skin_pixel(skin_img, u + sx, v + (part_height - 1 - sy))
         # Back face: z at min
@@ -229,14 +239,6 @@ def create_statue_schematic(skin_img, username):
         elif sx == part_width - 1:
             u, v = uv['left']
             return get_skin_pixel(skin_img, u + sz, v + (part_height - 1 - sy))
-        # Top face: y at max
-        elif sy == part_height - 1:
-            u, v = uv['top']
-            return get_skin_pixel(skin_img, u + sx, v + sz)
-        # Bottom face: y at min
-        elif sy == 0:
-            u, v = uv['bottom']
-            return get_skin_pixel(skin_img, u + sx, v + (part_depth - 1 - sz))
         # Interior block - use front face as default
         else:
             u, v = uv['front']
