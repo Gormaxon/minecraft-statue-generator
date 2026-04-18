@@ -6,6 +6,7 @@ import os
 import io
 import math
 import base64
+from itertools import product
 from PIL import Image
 import nbtlib
 from nbtlib import Int, Long, String, List, Compound
@@ -34,6 +35,9 @@ with open(os.path.join(os.path.dirname(__file__), 'block_colors.json'), 'r') as 
 # Variance weight for hybrid scoring
 VARIANCE_WEIGHT = 15
 
+# Pre-sort blocks by LAB lightness for faster searching
+BLOCKS_BY_LIGHTNESS = sorted(BLOCK_COLORS.items(), key=lambda x: x[1]['L'])
+
 
 def rgb_to_lab(r, g, b):
     """Convert RGB to LAB color space for perceptual color matching."""
@@ -52,6 +56,19 @@ def rgb_to_lab(r, g, b):
     return (116 * y_val) - 16, 500 * (x - y_val), 200 * (y_val - z)
 
 
+def get_block_score(block_id, target_lab):
+    """Calculate hybrid score for a block against target LAB color."""
+    data = BLOCK_COLORS[block_id]
+    block_lab = (data['L'], data['a'], data['b_lab'])
+    color_dist = math.sqrt(
+        (target_lab[0]-block_lab[0])**2 +
+        (target_lab[1]-block_lab[1])**2 +
+        (target_lab[2]-block_lab[2])**2
+    )
+    variance = data.get('variance', 0.5)
+    return color_dist + (variance * VARIANCE_WEIGHT)
+
+
 def find_closest_block(r, g, b):
     """Find the Minecraft block with the closest perceptual color using hybrid scoring."""
     pixel_lab = rgb_to_lab(r, g, b)
@@ -59,22 +76,100 @@ def find_closest_block(r, g, b):
     closest = 'minecraft:white_wool'
 
     for block_id, data in BLOCK_COLORS.items():
-        block_lab = (data['L'], data['a'], data['b_lab'])
-        color_dist = math.sqrt(
-            (pixel_lab[0]-block_lab[0])**2 +
-            (pixel_lab[1]-block_lab[1])**2 +
-            (pixel_lab[2]-block_lab[2])**2
-        )
-
-        # Hybrid score: color distance + variance penalty
-        variance = data.get('variance', 0.5)
-        score = color_dist + (variance * VARIANCE_WEIGHT)
-
+        score = get_block_score(block_id, pixel_lab)
         if score < min_score:
             min_score = score
             closest = block_id
 
     return closest
+
+
+def find_best_block_combination(target_rgb, scale):
+    """Find the best combination of blocks for a scaled pixel.
+
+    For scale N, we need NxN blocks to represent one pixel.
+    Uses greedy optimization to find blocks that average to target color.
+    """
+    num_blocks = scale * scale
+    target_lab = rgb_to_lab(*target_rgb)
+
+    if num_blocks == 1:
+        return [find_closest_block(*target_rgb)]
+
+    # Get top candidate blocks (closest to target)
+    candidates = []
+    for block_id, data in BLOCK_COLORS.items():
+        score = get_block_score(block_id, target_lab)
+        candidates.append((block_id, score, data))
+
+    # Sort by score and take top candidates for combination search
+    candidates.sort(key=lambda x: x[1])
+    top_candidates = candidates[:min(20, len(candidates))]  # Top 20 blocks
+
+    # For small scales (2-3), try combinations
+    if num_blocks <= 4:
+        best_combo = None
+        best_score = float('inf')
+
+        # Try all combinations of top candidates
+        for combo in product(range(len(top_candidates)), repeat=num_blocks):
+            blocks = [top_candidates[i] for i in combo]
+
+            # Calculate average LAB of this combination
+            avg_L = sum(b[2]['L'] for b in blocks) / num_blocks
+            avg_a = sum(b[2]['a'] for b in blocks) / num_blocks
+            avg_b = sum(b[2]['b_lab'] for b in blocks) / num_blocks
+
+            # Calculate distance from target
+            color_dist = math.sqrt(
+                (target_lab[0] - avg_L)**2 +
+                (target_lab[1] - avg_a)**2 +
+                (target_lab[2] - avg_b)**2
+            )
+
+            # Average variance penalty
+            avg_variance = sum(b[2].get('variance', 0.5) for b in blocks) / num_blocks
+            score = color_dist + (avg_variance * VARIANCE_WEIGHT * 0.5)
+
+            if score < best_score:
+                best_score = score
+                best_combo = [b[0] for b in blocks]
+
+        return best_combo
+
+    # For larger scales, use greedy approach
+    result = []
+    remaining_target = [target_lab[0] * num_blocks,
+                        target_lab[1] * num_blocks,
+                        target_lab[2] * num_blocks]
+
+    for i in range(num_blocks):
+        blocks_left = num_blocks - i
+        needed_avg = (remaining_target[0] / blocks_left,
+                      remaining_target[1] / blocks_left,
+                      remaining_target[2] / blocks_left)
+
+        # Find block closest to needed average
+        best_block = top_candidates[0][0]
+        best_dist = float('inf')
+
+        for block_id, _, data in top_candidates:
+            dist = math.sqrt(
+                (needed_avg[0] - data['L'])**2 +
+                (needed_avg[1] - data['a'])**2 +
+                (needed_avg[2] - data['b_lab'])**2
+            )
+            if dist < best_dist:
+                best_dist = dist
+                best_block = block_id
+
+        result.append(best_block)
+        block_data = BLOCK_COLORS[best_block]
+        remaining_target[0] -= block_data['L']
+        remaining_target[1] -= block_data['a']
+        remaining_target[2] -= block_data['b_lab']
+
+    return result
 
 
 def get_uuid_from_username(username):
@@ -135,9 +230,23 @@ def get_skin_pixel(skin_img, u, v):
     return skin_img.getpixel((u, v))
 
 
-def create_statue_schematic(skin_img, username):
-    """Create a Litematica schematic of the player statue."""
-    width, height, length = 16, 33, 8
+def create_statue_schematic(skin_img, username, hollow=False, scale=1):
+    """Create a Litematica schematic of the player statue.
+
+    Args:
+        skin_img: PIL Image of the skin
+        username: Player username
+        hollow: If True, interior blocks are air
+        scale: Scale factor (1 = 1 block per pixel, 2 = 2x2 blocks per pixel, etc.)
+    """
+    # Base dimensions (scale=1)
+    base_width, base_height, base_length = 16, 33, 8
+
+    # Scaled dimensions
+    width = base_width * scale
+    height = base_height * scale
+    length = base_length * scale
+
     total_volume = width * height * length
     blocks_array = [0] * total_volume
 
@@ -151,74 +260,47 @@ def create_statue_schematic(skin_img, username):
         return block_to_idx[block_name]
 
     def set_block(x, y, z, block_name):
-        idx = (y * length + z) * width + x
-        blocks_array[idx] = get_or_add_palette(block_name)
+        if 0 <= x < width and 0 <= y < height and 0 <= z < length:
+            idx = (y * length + z) * width + x
+            blocks_array[idx] = get_or_add_palette(block_name)
 
-    def get_face_pixel(skin_img, part, sx, sy, sz, part_width, part_height, part_depth):
-        """Get pixel from correct face based on block position within body part."""
-        # Determine which face this block is on (prioritize front/back, then sides)
-        # UV layouts for each body part (u_start, v_start for each face)
-        uv_map = {
-            'head': {
-                'front': (8, 8),      # 8x8 face
-                'back': (24, 8),
-                'right': (0, 8),
-                'left': (16, 8),
-                'top': (8, 0),
-                'bottom': (16, 0)
-            },
-            'body': {
-                'front': (20, 20),    # 8x12 front/back, 4x12 sides
-                'back': (32, 20),
-                'right': (16, 20),
-                'left': (28, 20),
-                'top': (20, 16),
-                'bottom': (28, 16)
-            },
-            'right_arm': {
-                'front': (44, 20),    # 4x12 front/back, 4x12 sides
-                'back': (52, 20),
-                'right': (40, 20),    # outer
-                'left': (48, 20),     # inner
-                'top': (44, 16),
-                'bottom': (48, 16)
-            },
-            'left_arm': {
-                'front': (36, 52),
-                'back': (44, 52),
-                'right': (32, 52),    # inner
-                'left': (40, 52),     # outer
-                'top': (36, 48),
-                'bottom': (40, 48)
-            },
-            'right_leg': {
-                'front': (4, 20),     # 4x12 front/back, 4x12 sides
-                'back': (12, 20),
-                'right': (0, 20),     # outer
-                'left': (8, 20),      # inner
-                'top': (4, 16),
-                'bottom': (8, 16)
-            },
-            'left_leg': {
-                'front': (20, 52),
-                'back': (28, 52),
-                'right': (16, 52),    # inner
-                'left': (24, 52),     # outer
-                'top': (20, 48),
-                'bottom': (24, 48)
-            }
+    # UV layouts for each body part
+    UV_MAP = {
+        'head': {
+            'front': (8, 8), 'back': (24, 8), 'right': (0, 8),
+            'left': (16, 8), 'top': (8, 0), 'bottom': (16, 0)
+        },
+        'body': {
+            'front': (20, 20), 'back': (32, 20), 'right': (16, 20),
+            'left': (28, 20), 'top': (20, 16), 'bottom': (28, 16)
+        },
+        'right_arm': {
+            'front': (44, 20), 'back': (52, 20), 'right': (40, 20),
+            'left': (48, 20), 'top': (44, 16), 'bottom': (48, 16)
+        },
+        'left_arm': {
+            'front': (36, 52), 'back': (44, 52), 'right': (32, 52),
+            'left': (40, 52), 'top': (36, 48), 'bottom': (40, 48)
+        },
+        'right_leg': {
+            'front': (4, 20), 'back': (12, 20), 'right': (0, 20),
+            'left': (8, 20), 'top': (4, 16), 'bottom': (8, 16)
+        },
+        'left_leg': {
+            'front': (20, 52), 'back': (28, 52), 'right': (16, 52),
+            'left': (24, 52), 'top': (20, 48), 'bottom': (24, 48)
         }
+    }
 
-        uv = uv_map[part]
+    def get_face_pixel(part, sx, sy, sz, part_width, part_height, part_depth):
+        """Get pixel from correct face based on block position within body part."""
+        uv = UV_MAP[part]
 
-        # Determine which face based on position
-        # All faces render fully - top/bottom first so head/arm tops are complete
-
-        # Top face: y at max (full top surface)
+        # Top face: y at max
         if sy == part_height - 1:
             u, v = uv['top']
             return get_skin_pixel(skin_img, u + sx, v + sz)
-        # Bottom face: y at min (full bottom surface)
+        # Bottom face: y at min
         elif sy == 0:
             u, v = uv['bottom']
             return get_skin_pixel(skin_img, u + sx, v + (part_depth - 1 - sz))
@@ -229,7 +311,6 @@ def create_statue_schematic(skin_img, username):
         # Back face: z at min
         elif sz == 0:
             u, v = uv['back']
-            # Back face is mirrored horizontally
             return get_skin_pixel(skin_img, u + (part_width - 1 - sx), v + (part_height - 1 - sy))
         # Right face: x at min
         elif sx == 0:
@@ -239,56 +320,105 @@ def create_statue_schematic(skin_img, username):
         elif sx == part_width - 1:
             u, v = uv['left']
             return get_skin_pixel(skin_img, u + sz, v + (part_height - 1 - sy))
-        # Interior block - use front face as default
+        # Interior block
         else:
-            u, v = uv['front']
-            return get_skin_pixel(skin_img, u + sx, v + (part_height - 1 - sy))
+            return None  # Will be handled by hollow check
 
-    # Fill all body parts
+    def is_surface_block(sx, sy, sz, part_width, part_height, part_depth):
+        """Check if block is on the surface of the body part."""
+        return (sx == 0 or sx == part_width - 1 or
+                sy == 0 or sy == part_height - 1 or
+                sz == 0 or sz == part_depth - 1)
+
+    def fill_body_part(part, base_x, base_y, base_z, part_width, part_height, part_depth):
+        """Fill a body part with blocks, handling scale and hollow options."""
+        for sy in range(part_height):
+            for sx in range(part_width):
+                for sz in range(part_depth):
+                    # Check if this is an interior block
+                    is_surface = is_surface_block(sx, sy, sz, part_width, part_height, part_depth)
+
+                    if hollow and not is_surface:
+                        # Skip interior blocks for hollow statue
+                        continue
+
+                    # Get pixel color for this position
+                    pixel = get_face_pixel(part, sx, sy, sz, part_width, part_height, part_depth)
+
+                    if pixel is None:
+                        # Interior block in solid mode - use a fill color or front face
+                        uv = UV_MAP[part]
+                        u, v = uv['front']
+                        pixel = get_skin_pixel(skin_img, u + sx, v + (part_height - 1 - sy))
+
+                    r, g, b, a = pixel
+
+                    # Calculate scaled block positions
+                    scaled_x = base_x * scale + sx * scale
+                    scaled_y = base_y * scale + sy * scale
+                    scaled_z = base_z * scale + sz * scale
+
+                    if scale == 1:
+                        # Simple case: one block per pixel
+                        set_block(scaled_x, scaled_y, scaled_z, find_closest_block(r, g, b))
+                    else:
+                        # Get best block combination for this pixel
+                        blocks = find_best_block_combination((r, g, b), scale)
+
+                        # Place blocks in a scale x scale pattern
+                        block_idx = 0
+                        for dy in range(scale):
+                            for dx in range(scale):
+                                for dz in range(scale):
+                                    # For surface blocks, only place on the visible surface
+                                    if is_surface:
+                                        # Determine which sub-blocks are on the outer surface
+                                        on_outer = False
+                                        if sx == 0 and dx == 0:
+                                            on_outer = True
+                                        if sx == part_width - 1 and dx == scale - 1:
+                                            on_outer = True
+                                        if sy == 0 and dy == 0:
+                                            on_outer = True
+                                        if sy == part_height - 1 and dy == scale - 1:
+                                            on_outer = True
+                                        if sz == 0 and dz == 0:
+                                            on_outer = True
+                                        if sz == part_depth - 1 and dz == scale - 1:
+                                            on_outer = True
+
+                                        if hollow and not on_outer:
+                                            continue
+
+                                    # Use blocks from the combination (cycle through if needed)
+                                    block = blocks[block_idx % len(blocks)]
+                                    set_block(scaled_x + dx, scaled_y + dy, scaled_z + dz, block)
+                                    block_idx += 1
+
+    # Fill all body parts with base coordinates
     # Head: x=4-11, y=25-32, z=0-7 (8x8x8)
-    for sy in range(8):
-        for sx in range(8):
-            for sz in range(8):
-                r, g, b, a = get_face_pixel(skin_img, 'head', sx, sy, sz, 8, 8, 8)
-                set_block(4+sx, 25+sy, sz, find_closest_block(r, g, b))
+    fill_body_part('head', 4, 25, 0, 8, 8, 8)
 
     # Body: x=4-11, y=13-24, z=2-5 (8x12x4)
-    for sy in range(12):
-        for sx in range(8):
-            for sz in range(4):
-                r, g, b, a = get_face_pixel(skin_img, 'body', sx, sy, sz, 8, 12, 4)
-                set_block(4+sx, 13+sy, 2+sz, find_closest_block(r, g, b))
+    fill_body_part('body', 4, 13, 2, 8, 12, 4)
 
     # Right Arm: x=0-3, y=13-24, z=2-5 (4x12x4)
-    for sy in range(12):
-        for sx in range(4):
-            for sz in range(4):
-                r, g, b, a = get_face_pixel(skin_img, 'right_arm', sx, sy, sz, 4, 12, 4)
-                set_block(sx, 13+sy, 2+sz, find_closest_block(r, g, b))
+    fill_body_part('right_arm', 0, 13, 2, 4, 12, 4)
 
     # Left Arm: x=12-15, y=13-24, z=2-5 (4x12x4)
-    for sy in range(12):
-        for sx in range(4):
-            for sz in range(4):
-                r, g, b, a = get_face_pixel(skin_img, 'left_arm', sx, sy, sz, 4, 12, 4)
-                set_block(12+sx, 13+sy, 2+sz, find_closest_block(r, g, b))
+    fill_body_part('left_arm', 12, 13, 2, 4, 12, 4)
 
     # Right Leg: x=4-7, y=1-12, z=2-5 (4x12x4)
-    for sy in range(12):
-        for sx in range(4):
-            for sz in range(4):
-                r, g, b, a = get_face_pixel(skin_img, 'right_leg', sx, sy, sz, 4, 12, 4)
-                set_block(4+sx, 1+sy, 2+sz, find_closest_block(r, g, b))
+    fill_body_part('right_leg', 4, 1, 2, 4, 12, 4)
 
     # Left Leg: x=8-11, y=1-12, z=2-5 (4x12x4)
-    for sy in range(12):
-        for sx in range(4):
-            for sz in range(4):
-                r, g, b, a = get_face_pixel(skin_img, 'left_leg', sx, sy, sz, 4, 12, 4)
-                set_block(8+sx, 1+sy, 2+sz, find_closest_block(r, g, b))
+    fill_body_part('left_leg', 8, 1, 2, 4, 12, 4)
+
+    # Count non-air blocks
+    total_blocks = sum(1 for b in blocks_array if b != 0)
 
     # Build NBT structure
-    nbits = max(2, math.ceil(math.log2(len(palette))))
+    nbits = max(2, math.ceil(math.log2(len(palette)))) if len(palette) > 1 else 2
     bit_array = LitematicaBitArray(total_volume, nbits)
     for idx, val in enumerate(blocks_array):
         bit_array[idx] = val
@@ -306,6 +436,12 @@ def create_statue_schematic(skin_img, username):
         'PendingFluidTicks': List[Compound]([])
     })
 
+    desc = f'Statue of {username}'
+    if scale > 1:
+        desc += f' (scale {scale}x)'
+    if hollow:
+        desc += ' (hollow)'
+
     root = Compound({
         'Version': Int(6),
         'SubVersion': Int(1),
@@ -313,9 +449,9 @@ def create_statue_schematic(skin_img, username):
         'Metadata': Compound({
             'Name': String(f'{username}_statue'),
             'Author': String('Minecraft Statue Generator'),
-            'Description': String(f'Statue of {username}'),
+            'Description': String(desc),
             'RegionCount': Int(1),
-            'TotalBlocks': Int(1664),
+            'TotalBlocks': Int(total_blocks),
             'TotalVolume': Int(total_volume),
             'TimeCreated': Long(0),
             'TimeModified': Long(0),
@@ -332,9 +468,19 @@ def generate_statue():
     """Generate a statue schematic from a Minecraft username."""
     data = request.json
     username = data.get('username', '').strip()
+    hollow = data.get('hollow', False)
+    scale = data.get('scale', 1)
 
+    # Validate inputs
     if not username:
         return jsonify({'error': 'Username is required'}), 400
+
+    try:
+        scale = int(scale)
+        if scale < 1 or scale > 10:
+            return jsonify({'error': 'Scale must be between 1 and 10'}), 400
+    except (ValueError, TypeError):
+        return jsonify({'error': 'Invalid scale value'}), 400
 
     # Get UUID
     uuid = get_uuid_from_username(username)
@@ -351,8 +497,8 @@ def generate_statue():
     if not skin_img:
         return jsonify({'error': 'Could not download skin'}), 500
 
-    # Create schematic
-    root = create_statue_schematic(skin_img, username)
+    # Create schematic with options
+    root = create_statue_schematic(skin_img, username, hollow=hollow, scale=scale)
 
     # Save to bytes
     output = io.BytesIO()
@@ -360,11 +506,19 @@ def generate_statue():
     nbt_file.save(output)
     output.seek(0)
 
+    # Generate filename with options
+    filename = f'{username}_statue'
+    if scale > 1:
+        filename += f'_{scale}x'
+    if hollow:
+        filename += '_hollow'
+    filename += '.litematic'
+
     return send_file(
         output,
         mimetype='application/octet-stream',
         as_attachment=True,
-        download_name=f'{username}_statue.litematic'
+        download_name=filename
     )
 
 
