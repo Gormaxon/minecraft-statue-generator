@@ -88,7 +88,7 @@ def find_best_block_combination(target_rgb, scale):
     """Find the best combination of blocks for a scaled pixel.
 
     For scale N, we need NxN blocks to represent one pixel.
-    Uses greedy optimization to find blocks that average to target color.
+    Uses fast greedy optimization to find blocks that average to target color.
     """
     num_blocks = scale * scale
     target_lab = rgb_to_lab(*target_rgb)
@@ -102,42 +102,11 @@ def find_best_block_combination(target_rgb, scale):
         score = get_block_score(block_id, target_lab)
         candidates.append((block_id, score, data))
 
-    # Sort by score and take top candidates for combination search
+    # Sort by score and take top candidates
     candidates.sort(key=lambda x: x[1])
-    top_candidates = candidates[:min(20, len(candidates))]  # Top 20 blocks
+    top_candidates = candidates[:min(15, len(candidates))]
 
-    # For small scales (2-3), try combinations
-    if num_blocks <= 4:
-        best_combo = None
-        best_score = float('inf')
-
-        # Try all combinations of top candidates
-        for combo in product(range(len(top_candidates)), repeat=num_blocks):
-            blocks = [top_candidates[i] for i in combo]
-
-            # Calculate average LAB of this combination
-            avg_L = sum(b[2]['L'] for b in blocks) / num_blocks
-            avg_a = sum(b[2]['a'] for b in blocks) / num_blocks
-            avg_b = sum(b[2]['b_lab'] for b in blocks) / num_blocks
-
-            # Calculate distance from target
-            color_dist = math.sqrt(
-                (target_lab[0] - avg_L)**2 +
-                (target_lab[1] - avg_a)**2 +
-                (target_lab[2] - avg_b)**2
-            )
-
-            # Average variance penalty
-            avg_variance = sum(b[2].get('variance', 0.5) for b in blocks) / num_blocks
-            score = color_dist + (avg_variance * VARIANCE_WEIGHT * 0.5)
-
-            if score < best_score:
-                best_score = score
-                best_combo = [b[0] for b in blocks]
-
-        return best_combo
-
-    # For larger scales, use greedy approach
+    # Use greedy approach for all scales (fast)
     result = []
     remaining_target = [target_lab[0] * num_blocks,
                         target_lab[1] * num_blocks,
@@ -151,16 +120,19 @@ def find_best_block_combination(target_rgb, scale):
 
         # Find block closest to needed average
         best_block = top_candidates[0][0]
-        best_dist = float('inf')
+        best_score = float('inf')
 
         for block_id, _, data in top_candidates:
-            dist = math.sqrt(
+            color_dist = math.sqrt(
                 (needed_avg[0] - data['L'])**2 +
                 (needed_avg[1] - data['a'])**2 +
                 (needed_avg[2] - data['b_lab'])**2
             )
-            if dist < best_dist:
-                best_dist = dist
+            variance = data.get('variance', 0.5)
+            score = color_dist + (variance * VARIANCE_WEIGHT * 0.3)
+
+            if score < best_score:
+                best_score = score
                 best_block = block_id
 
         result.append(best_block)
